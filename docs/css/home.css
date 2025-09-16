@@ -1,0 +1,7 @@
+@import url("./global.css");
+
+section.welcome {
+  text-align: center;
+  background-color: black;
+  background: linear-gradient(to bottom, var(--color-tertiary-dark), var(--color-background));
+}

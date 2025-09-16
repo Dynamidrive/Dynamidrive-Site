@@ -1,0 +1,60 @@
+/* Logo font */
+@import url("../fonts/PPNeueMachina-Ultrabold.otf");
+
+:root {
+  --color-primary: #f3f3f3;
+  --color-secondary: #c3c3c3;
+  --color-tertiary: #9f9f9f;
+  --color-tertiary-dark: #7a7a7a;
+  --color-background: #222222;
+  --color-text: #ffffff;
+  --logo-text-color-gradient: linear-gradient(to bottom, var(--color-text), var(--color-secondary));
+  --font-family: 'Helvetica Neue', Arial, sans-serif;
+  --font-logo: 'PP Neue Machina', sans-serif;
+  --font-size-base: 16px;
+  --spacing-base: 1rem;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  margin: 0;
+  padding: var(--spacing-base);
+  width: calc(100vw - (2 * var(--spacing-base)));
+  min-height: calc(100vh - (2 * var(--spacing-base)));
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100vw - (2 * var(--spacing-base)));
+  padding: var(--spacing-base);
+  background-color: var(--color-primary);
+  border-bottom: 2px solid linear-gradient(to right, var(--color-background), var(--color-secondary), var(--color-background));
+
+  ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-base);
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.logo-font {
+  font-family: var(--font-logo);
+  background: var(--logo-text-color-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--color-text);
+  margin: 0;
+  text-decoration: none;
+}
