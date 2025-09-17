@@ -1,5 +1,8 @@
 /* Logo font */
-@import url("../fonts/PPNeueMachina-Ultrabold.otf");
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: url('../fonts/PPNeueMachina-Ultrabold.otf') format('opentype');
+}
 
 :root {
   --color-primary: #f3f3f3;
@@ -7,8 +10,11 @@
   --color-tertiary: #9f9f9f;
   --color-tertiary-dark: #7a7a7a;
   --color-background: #222222;
+  --color-background-transparent: #222222b7;
   --color-text: #ffffff;
+  --color-text-link: #1e90ff;
   --logo-text-color-gradient: linear-gradient(to bottom, var(--color-text), var(--color-secondary));
+  --logo-text-color-dark-gradient: linear-gradient(to bottom, var(--color-secondary), var(--color-tertiary));
   --font-family: 'Helvetica Neue', Arial, sans-serif;
   --font-logo: 'PP Neue Machina', sans-serif;
   --font-size-base: 16px;
@@ -21,8 +27,7 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   margin: 0;
-  padding: var(--spacing-base);
-  width: calc(100vw - (2 * var(--spacing-base)));
+  width: 100vw; /* calc(100vw - (2 * var(--spacing-base))) */
   min-height: calc(100vh - (2 * var(--spacing-base)));
   overflow-x: hidden;
 }
@@ -34,10 +39,18 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 5;
   width: calc(100vw - (2 * var(--spacing-base)));
   padding: var(--spacing-base);
-  background-color: var(--color-primary);
-  border-bottom: 2px solid linear-gradient(to right, var(--color-background), var(--color-secondary), var(--color-background));
+  background-color: var(--color-background-transparent);
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(to right, var(--color-background), var(--color-secondary), var(--color-background)) 1;
+
+  img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+  }
 
   ul.nav-links {
     list-style: none;
@@ -45,11 +58,74 @@ nav {
     gap: var(--spacing-base);
     margin: 0;
     padding: 0;
+
+    li a {
+      text-decoration: underline 1.5px transparent;
+      transition: 0.2s ease-out text-decoration-color;
+
+      &.active {
+        text-decoration-style: dashed;
+      }
+
+      &:hover, &.active {
+        text-decoration-color: var(--color-text);
+      }
+    }
+  }
+}
+
+main {
+  margin-top: 70px; /* Height of the nav */
+  /* padding: var(--spacing-base); */
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: calc(100vw - (2 * var(--spacing-base)));
+  text-align: center;
+  padding: var(--spacing-base);
+  background-color: var(--color-background);
+  border-top: 2px solid linear-gradient(to right, var(--color-background), var(--color-secondary), var(--color-background));
+  margin-top: var(--spacing-base);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--spacing-base);
+
+    li {
+      border-right: 1px solid var(--color-tertiary-dark);
+
+      a {
+        text-decoration: underline 1.5px transparent;
+        transition: 0.2s ease-out;
+        transition-property: text-decoration-color;
+
+        &:hover {
+          text-decoration-color: var(--color-text);
+        }
+      }
+    }
+  }
+
+  a {
+    color: var(--color-text-link);
+    text-decoration: underline;
   }
 }
 
 .logo-font {
   font-family: var(--font-logo);
+  font-weight: normal;
   background: var(--logo-text-color-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -57,4 +133,14 @@ nav {
   color: var(--color-text);
   margin: 0;
   text-decoration: none;
+
+  &.dark-color {
+    background: var(--logo-text-color-dark-gradient);
+    color: var(--color-tertiary);
+  }
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
