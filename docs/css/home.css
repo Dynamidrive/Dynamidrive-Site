@@ -24,11 +24,13 @@ main {
   section.welcome {
     h1 {
       z-index: 2;
-      font-size: 3rem;
+      font-size: 4rem;
       margin: 0;
-      max-width: 400px;
+      width: 600px;
+      max-width: 90vw;
       padding-bottom: 0.5rem;
       text-shadow: 0 0 24px rgba(0,0,0,.8);
+      transition: 0.2s ease-out;
     }
 
     .animated-cards {
@@ -56,6 +58,17 @@ main {
           animation: fadeIn 1s ease-out;
           user-select: none;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    section.welcome {
+      h1 {
+        font-size: 2.5rem;
+        width: 350px;
       }
     }
   }
