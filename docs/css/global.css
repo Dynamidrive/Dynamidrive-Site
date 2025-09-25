@@ -4,6 +4,15 @@
   src: url('../fonts/PPNeueMachina-Ultrabold.otf') format('opentype');
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 :root {
   --color-primary: #f3f3f3;
   --color-secondary: #c3c3c3;
@@ -12,14 +21,14 @@
   --color-tertiary-transparent: #b5b5b5af;
   --color-background: #222222;
   --color-background-transparent: #222222b7;
-  --color-background-light: #2b2b2b;
+  --color-background-light: #252525;
   --color-background-light-transparent: #5a5a5ab7;
   --color-background-dark: #131313;
   --color-text: #ffffff;
   --color-text-muted: #b5b5b5;
   --color-text-link: #1e90ff;
   --logo-text-color-gradient: linear-gradient(to bottom, var(--color-text), var(--color-secondary));
-  --logo-text-color-dark-gradient: linear-gradient(to bottom, var(--color-secondary), var(--color-tertiary));
+  --logo-text-color-dark-gradient: linear-gradient(to bottom, var(--color-tertiary), var(--color-tertiary-dark));
   --logo-text-color-light-gradient: linear-gradient(to bottom, var(--color-text), var(--color-muted));
   --font-family: 'Helvetica Neue', Arial, sans-serif;
   --font-logo: 'PP Neue Machina', sans-serif;
@@ -77,10 +86,6 @@ nav {
       text-decoration: underline 1.5px transparent;
       transition: 0.2s ease-out text-decoration-color;
 
-      &.active {
-        /* text-decoration-style: dashed; */
-      }
-
       &:hover {
         text-decoration-color: var(--color-text);
       }
@@ -89,8 +94,7 @@ nav {
 }
 
 main {
-  margin-top: 70px; /* Height of the nav */
-  /* padding: var(--spacing-base); */
+  margin-top: calc(76px + var(--spacing-base)); /* Height of the nav */
 }
 
 footer {
@@ -99,7 +103,6 @@ footer {
   width: calc(100vw - (2 * var(--spacing-base)));
   text-align: center;
   padding: var(--spacing-base);
-  background-color: var(--color-background);
   border-top: 2px solid linear-gradient(to right, var(--color-background), var(--color-secondary), var(--color-background));
   margin-top: var(--spacing-base);
   display: flex;
@@ -137,16 +140,19 @@ footer {
   }
 }
 
-.logo-font, .logo-font-children p, .logo-font-children a, .logo-font-children h1, .logo-font-children h2, .logo-font-children h3 {
+.logo-font, .logo-font-children *:is(h1, h2, h3, h4, h5, h6, p, a, li) {
   font-family: var(--font-logo);
   font-weight: normal;
-  background: var(--logo-text-color-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   color: var(--color-text);
   margin: 0;
   text-decoration: none;
+  
+  &.gradient {
+    background: var(--logo-text-color-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   &.dark-color {
     background: var(--logo-text-color-dark-gradient);
