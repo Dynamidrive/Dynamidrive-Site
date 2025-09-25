@@ -1,4 +1,4 @@
-const cardImageCount = 40; // All are assumed to be named: 1.png, 2.png, etc.
+const cardImageCount = 100; // All are assumed to be named: 1.png, 2.png, etc.
 const cardImageRows = 3; // Number of rows
 const cardStartingOffset = 3; // Number of cards to push the first card off-screen
 const cardImagePath = 'img/soundtracks/';
@@ -32,7 +32,7 @@ function updateCardAnimations(deltaTime) {
       currentX += (speed * direction) * deltaTime;
       
       // Handle wrapping - when card exits one side, move it to the other side
-      if (direction === 1 && currentX > containerWidth) {
+      if (direction === 1 && currentX > cardWidth) {
         // Moving right, when card goes off right edge, wrap to left
         const leftMostX = Math.min(...row.cards.map(c => parseFloat(c.dataset.x || '0')));
         currentX = leftMostX - cardWidth - cardGap;

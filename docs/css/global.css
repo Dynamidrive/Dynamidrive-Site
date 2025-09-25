@@ -49,6 +49,38 @@ body {
   min-height: calc(100vh - (2 * var(--spacing-base)));
 }
 
+a {
+  color: inherit;
+}
+
+.logo-font, .logo-font-children *:is(h1, h2, h3, h4, h5, h6, p, a, li) {
+  font-family: var(--font-logo);
+  font-weight: normal;
+  margin: 0;
+  
+  &.gradient {
+    background: var(--logo-text-color-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &.dark-color {
+    background: var(--logo-text-color-dark-gradient);
+    color: var(--color-tertiary);
+  }
+
+  &.light-color {
+    background: var(--logo-text-color-gradient);
+    color: var(--color-text);
+  }
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -103,6 +135,7 @@ footer {
   width: calc(100vw - (2 * var(--spacing-base)));
   text-align: center;
   padding: var(--spacing-base);
+  color: var(--color-text-muted);
   border-top: 2px solid linear-gradient(to right, var(--color-background), var(--color-secondary), var(--color-background));
   margin-top: var(--spacing-base);
   display: flex;
@@ -111,63 +144,26 @@ footer {
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 0.5rem;
-
+  
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: column;
     gap: var(--spacing-base);
-
+    
     li {
-      border-right: 1px solid var(--color-tertiary-dark);
-
       a {
         text-decoration: underline 1.5px transparent;
-        transition: 0.2s ease-out;
-        transition-property: text-decoration-color;
+        transition: 0.2s ease-out text-decoration-color;
 
         &:hover {
-          text-decoration-color: var(--color-text);
+          text-decoration-color: var(--color-text-muted);
         }
       }
     }
   }
-
-  a {
-    color: var(--color-text-link);
-    text-decoration: underline;
-  }
-}
-
-.logo-font, .logo-font-children *:is(h1, h2, h3, h4, h5, h6, p, a, li) {
-  font-family: var(--font-logo);
-  font-weight: normal;
-  color: var(--color-text);
-  margin: 0;
-  text-decoration: none;
-  
-  &.gradient {
-    background: var(--logo-text-color-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  &.dark-color {
-    background: var(--logo-text-color-dark-gradient);
-    color: var(--color-tertiary);
-  }
-
-  &.light-color {
-    background: var(--logo-text-color-gradient);
-    color: var(--color-text);
-  }
-}
-
-.backdrop-blur {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 @media (max-width: 550px) {
