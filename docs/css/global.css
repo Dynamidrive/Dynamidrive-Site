@@ -115,10 +115,15 @@ nav {
     padding: 0;
 
     li a {
+      color: var(--color-text-muted);
       text-decoration: underline 1.5px transparent;
-      transition: 0.2s ease-out text-decoration-color;
+      transition: 0.2s ease-out;
 
-      &:hover {
+      &:hover, &.active, &:focus {
+        color: var(--color-text);
+      }
+
+      &:hover, &:focus {
         text-decoration-color: var(--color-text);
       }
     }
