@@ -9,12 +9,18 @@
   --color-secondary: #c3c3c3;
   --color-tertiary: #9f9f9f;
   --color-tertiary-dark: #7a7a7a;
+  --color-tertiary-transparent: #b5b5b5af;
   --color-background: #222222;
   --color-background-transparent: #222222b7;
+  --color-background-light: #2b2b2b;
+  --color-background-light-transparent: #5a5a5ab7;
+  --color-background-dark: #131313;
   --color-text: #ffffff;
+  --color-text-muted: #b5b5b5;
   --color-text-link: #1e90ff;
   --logo-text-color-gradient: linear-gradient(to bottom, var(--color-text), var(--color-secondary));
   --logo-text-color-dark-gradient: linear-gradient(to bottom, var(--color-secondary), var(--color-tertiary));
+  --logo-text-color-light-gradient: linear-gradient(to bottom, var(--color-text), var(--color-muted));
   --font-family: 'Helvetica Neue', Arial, sans-serif;
   --font-logo: 'PP Neue Machina', sans-serif;
   --font-size-base: 16px;
@@ -22,14 +28,16 @@
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: var(--color-background-dark);
   color: var(--color-text);
   font-family: var(--font-family);
   font-size: var(--font-size-base);
+  scrollbar-color: var(--color-secondary) var(--color-background);
+  scrollbar-gutter: stable;
+  overflow: hidden scroll;
   margin: 0;
   width: 100vw; /* calc(100vw - (2 * var(--spacing-base))) */
   min-height: calc(100vh - (2 * var(--spacing-base)));
-  overflow-x: hidden;
 }
 
 nav {
@@ -42,7 +50,7 @@ nav {
   z-index: 5;
   width: calc(100vw - (2 * var(--spacing-base)));
   padding: var(--spacing-base);
-  background-color: var(--color-background-transparent);
+  background: linear-gradient(to top, var(--color-background-transparent), var(--color-background-light-transparent));
   border-bottom: 2px solid transparent;
   border-image: linear-gradient(to right, var(--color-background), var(--color-secondary), var(--color-background)) 1;
 
@@ -50,6 +58,12 @@ nav {
     height: 40px;
     width: auto;
     object-fit: contain;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-base);
   }
 
   ul.nav-links {
@@ -64,10 +78,10 @@ nav {
       transition: 0.2s ease-out text-decoration-color;
 
       &.active {
-        text-decoration-style: dashed;
+        /* text-decoration-style: dashed; */
       }
 
-      &:hover, &.active {
+      &:hover {
         text-decoration-color: var(--color-text);
       }
     }
@@ -123,7 +137,7 @@ footer {
   }
 }
 
-.logo-font {
+.logo-font, .logo-font-children p, .logo-font-children a, .logo-font-children h1, .logo-font-children h2, .logo-font-children h3 {
   font-family: var(--font-logo);
   font-weight: normal;
   background: var(--logo-text-color-gradient);
@@ -138,9 +152,20 @@ footer {
     background: var(--logo-text-color-dark-gradient);
     color: var(--color-tertiary);
   }
+
+  &.light-color {
+    background: var(--logo-text-color-gradient);
+    color: var(--color-text);
+  }
 }
 
 .backdrop-blur {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+@media (max-width: 550px) {
+  .nav-brand-text {
+    display: none;
+  }
 }
