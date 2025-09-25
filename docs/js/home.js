@@ -58,12 +58,13 @@ function createAnimatedCards() {
     let rowCards = [];
 
     const rowDiv = document.createElement('div');
-    rowDiv.className = 'card-row';
+    rowDiv.classList.add('card-row');
     
     for (let col = 0; col < cardsPerRow && currentIndex < cardImageCount; col++) {
       const img = document.createElement('img');
+      img.classList.add('animated-card');
+      img.setAttribute("loading", "lazy");
       img.src = `${cardImagePath}${cardIndices[currentIndex]}.png`;
-      img.className = 'animated-card';
       
       // Set initial position for proper spacing
       const initialX = reversed 
