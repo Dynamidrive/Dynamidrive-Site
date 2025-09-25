@@ -16,8 +16,8 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 100vw;
-    height: 80vh;
+    width: 200vw;
+    height: 100vh;
     max-height: 600px;
   }
 
