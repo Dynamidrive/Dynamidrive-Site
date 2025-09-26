@@ -8,6 +8,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -45,7 +46,8 @@ body {
   scrollbar-gutter: stable;
   overflow: hidden scroll;
   margin: 0;
-  width: 100vw; /* calc(100vw - (2 * var(--spacing-base))) */
+  width: 100vw;
+  /* calc(100vw - (2 * var(--spacing-base))) */
   min-height: calc(100vh - (2 * var(--spacing-base)));
 }
 
@@ -53,11 +55,12 @@ a {
   color: inherit;
 }
 
-.logo-font, .logo-font-children *:is(h1, h2, h3, h4, h5, h6, p, a, li) {
+.logo-font,
+.logo-font-children *:is(h1, h2, h3, h4, h5, h6, p, a, li) {
   font-family: var(--font-logo);
   font-weight: normal;
   margin: 0;
-  
+
   &.gradient {
     background: var(--logo-text-color-gradient);
     background-clip: text;
@@ -119,11 +122,14 @@ nav {
       text-decoration: underline 1.5px transparent;
       transition: 0.2s ease-out;
 
-      &:hover, &.active, &:focus {
+      &:hover,
+      &.active,
+      &:focus {
         color: var(--color-text);
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         text-decoration-color: var(--color-text);
       }
     }
@@ -131,7 +137,8 @@ nav {
 }
 
 main {
-  margin-top: calc(76px + var(--spacing-base)); /* Height of the nav */
+  margin-top: calc(76px + var(--spacing-base));
+  /* Height of the nav */
 }
 
 footer {
@@ -149,7 +156,7 @@ footer {
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 0.5rem;
-  
+
   ul {
     list-style: none;
     padding: 0;
@@ -157,7 +164,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-base);
-    
+
     li {
       a {
         text-decoration: underline 1.5px transparent;

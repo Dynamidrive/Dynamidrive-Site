@@ -4,8 +4,21 @@
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes card-load-flash {
+
+  0%,
+  100% {
+    opacity: 0.03;
+  }
+
+  50% {
+    opacity: 0.1;
   }
 }
 
@@ -17,8 +30,8 @@ main {
     justify-content: center;
     text-align: center;
     width: 100vw;
-    height: 80vh;
-    max-height: 600px;
+    height: 90vh;
+    max-height: 800px;
   }
 
   section.welcome {
@@ -29,7 +42,7 @@ main {
       width: 600px;
       max-width: 90vw;
       padding-bottom: 0.5rem;
-      text-shadow: 0 0 24px rgba(0,0,0,.8);
+      text-shadow: 0 0 24px rgba(0, 0, 0, .8);
       transition: 0.2s ease-out;
     }
 
@@ -46,7 +59,10 @@ main {
       opacity: .2;
 
       .card-row {
-        height: 200px;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        height: 30%;
         pointer-events: none;
         /* Animation is setup in home.js */
 
@@ -55,10 +71,38 @@ main {
           height: 200px;
           width: auto;
           object-fit: contain;
-          animation: fadeIn 1s ease-out;
           user-select: none;
+
+          &:not(.loaded) {
+            background: rgb(255, 255, 255);
+            border-radius: 48px;
+            width: 619px;
+            text-align: center;
+            opacity: 0.03;
+            animation: card-load-flash 1s infinite ease-out;
+          }
+
+          &.loaded {
+            animation: fadeIn 0.5s ease-out;
+            opacity: 1;
+          }
         }
       }
+    }
+  }
+
+  section.split {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-base);
+    flex-wrap: wrap;
+
+    .screenshot {
+      border-radius: 16px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, .8);
+      aspect-ratio: 4/7.5;
+      object-fit: cover;
+      width: 300px;
     }
   }
 }
