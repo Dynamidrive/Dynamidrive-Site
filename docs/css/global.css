@@ -69,7 +69,6 @@ a {
   }
 
   &.dark-color {
-    background: var(--logo-text-color-dark-gradient);
     color: var(--color-tertiary);
   }
 
@@ -137,8 +136,15 @@ nav {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: calc(76px + var(--spacing-base));
   /* Height of the nav */
+
+  section.limit-width {
+    max-width: 900px;
+  }
 }
 
 footer {
