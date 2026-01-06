@@ -4,6 +4,8 @@
   src: url('../fonts/PPNeueMachina-Ultrabold.otf') format('opentype');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -31,7 +33,7 @@
   --logo-text-color-gradient: linear-gradient(to bottom, var(--color-text), var(--color-secondary));
   --logo-text-color-dark-gradient: linear-gradient(to bottom, var(--color-tertiary), var(--color-tertiary-dark));
   --logo-text-color-light-gradient: linear-gradient(to bottom, var(--color-text), var(--color-muted));
-  --font-family: 'Helvetica Neue', Arial, sans-serif;
+  --font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --font-logo: 'PP Neue Machina', sans-serif;
   --font-size-base: 16px;
   --spacing-base: 1rem;
@@ -56,7 +58,8 @@ a {
 }
 
 .logo-font,
-.logo-font-children *:is(h1, h2, h3, h4, h5, h6, p, a, li) {
+.logo-font-children *:is(h1, h2, h3, h4, h5, h6, p, a, li),
+.logo-font-headers *:is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--font-logo);
   font-weight: normal;
   margin: 0;
@@ -91,7 +94,8 @@ nav {
   top: 0;
   left: 0;
   z-index: 5;
-  width: calc(100vw - (2 * var(--spacing-base)));
+  width: 100vw;
+  box-sizing: border-box;
   padding: var(--spacing-base);
   background: linear-gradient(to top, var(--color-background-transparent), var(--color-background-light-transparent));
   border-bottom: 2px solid transparent;
@@ -145,6 +149,17 @@ main {
   section.limit-width {
     max-width: 900px;
   }
+
+  section.align-top {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  section.unlimited-height {
+    height: auto;
+    max-height: none;
+  }
 }
 
 footer {
@@ -168,7 +183,7 @@ footer {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--spacing-base);
 
     li {
