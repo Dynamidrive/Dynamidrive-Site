@@ -38,7 +38,7 @@
     <section class="limit-width align-top unlimited-height logo-font-headers">
       <h2 id="introduction">Introduction</h2>
       <p>Dynamidrive (&quot;the App&quot;) is committed to protecting your privacy. This Privacy Policy explains how we
-        collect, use, and protect your information when you use our speed-adaptive music application.</p>
+        collect, use, and protect your information when you use our application.</p>
       <p><strong>Developer Information:</strong><br>Dynamidrive is developed and maintained solely by Kai del Castillo.
         All development, updates, and changes to the App are managed exclusively by Kai del Castillo.</p>
       <h2 id="technology-stack">Technology Stack</h2>
@@ -58,8 +58,8 @@
         Location data is used exclusively for the following purposes:</p>
       <ol>
         <li>
-          <p><strong>Speed Tracking:</strong> To determine your current speed and dynamically adjust the music volume
-            based on how fast you&#39;re traveling.</p>
+          <p><strong>Speed Tracking:</strong> To determine your current speed and dynamically adjust the volume of
+            different stems based on how fast you&#39;re traveling.</p>
         </li>
         <li>
           <p><strong>Speed Limit Detection:</strong> Your location coordinates are sent to TomTom&#39;s &quot;Snap to
@@ -68,14 +68,13 @@
         </li>
         <li>
           <p><strong>Map Background Display:</strong> When you select &quot;Map&quot; as your background option (instead
-            of &quot;Gradient&quot;), your current location is displayed on an interactive map background in real-time.
-          </p>
+            of &quot;Gradient&quot;), your current location is displayed on a map background in real-time.</p>
         </li>
       </ol>
       <p><strong>Important Details:</strong></p>
       <ul>
         <li>All location processing is handled by Apple&#39;s native MapKit framework</li>
-        <li>Location data is NOT stored permanently on our servers</li>
+        <li>Location data is NEVER sent to our servers</li>
         <li>Location data is NOT shared with third parties except for the TomTom API (see Third-Party Services section)
         </li>
         <li>You can disable the &quot;Distance Traveled&quot; feature at any time in Settings</li>
@@ -90,9 +89,9 @@
       <p><strong>Storage and Control:</strong></p>
       <ul>
         <li>Distance data is stored ONLY on your device using iOS UserDefaults</li>
-        <li>This data is NEVER uploaded to external servers</li>
+        <li>This data is NEVER uploaded to any servers</li>
         <li>This data is NOT included when you export or share a soundtrack</li>
-        <li>You can view, disable, or delete this data at any time through the App&#39;s Settings</li>
+        <li>You can disable or delete this data at any time through the App&#39;s Settings</li>
         <li>Disabling &quot;Distance Traveled Statistic&quot; in Settings stops all distance tracking immediately</li>
       </ul>
       <p><strong>Data Deletion:</strong>
@@ -105,8 +104,8 @@
       <h3 id="3-audio-files">3. Audio Files</h3>
       <p><strong>User-Created Soundtracks:</strong></p>
       <ul>
-        <li>Audio files you import or record are stored locally on your device</li>
-        <li>Files are saved in your device&#39;s Documents directory</li>
+        <li>Audio files you import into the app are stored locally on your device</li>
+        <li>All Files are saved onto your device in a hidden folder.</li>
         <li>Audio files are NEVER automatically uploaded to any server</li>
         <li>You maintain full control over your audio files</li>
       </ul>
@@ -117,9 +116,8 @@
           <p><strong>Upload Process:</strong></p>
           <ul>
             <li>You voluntarily select an audio file to upload</li>
-            <li>The file is sent to our secure backend server at <code>demucs.dynamidrive.app</code></li>
+            <li>The file is sent to our secure backend server managed by Google Cloud</li>
             <li>The upload uses HTTPS encryption</li>
-            <li>Maximum file size: 100MB</li>
           </ul>
         </li>
         <li>
@@ -133,7 +131,6 @@
         <li>
           <p><strong>Automatic Deletion:</strong></p>
           <ul>
-            <li>Once processing is complete, the separated tracks are available for download</li>
             <li><strong>Your original uploaded file and all processed files are automatically deleted from our servers
                 10 minutes after processing completes</strong></li>
             <li>This deletion is permanent and cannot be recovered</li>
@@ -143,7 +140,7 @@
           <p><strong>Downloaded Files:</strong></p>
           <ul>
             <li>Separated tracks you download are stored locally on your device</li>
-            <li>These files remain on your device until you manually delete them</li>
+            <li>These files remain only on your device until you manually delete them</li>
           </ul>
         </li>
       </ol>
@@ -176,16 +173,28 @@
         <li>We receive anonymized transaction information from Apple</li>
         <li>No credit card or personal payment information is accessible to us</li>
       </ul>
+      <h3 id="6-sharing-soundtracks">6. Sharing Soundtracks</h3>
+      <p><strong>Data Shared:</strong></p>
+      <ul>
+        <li>Files uploaded only for the soundtrack that is shared</li>
+        <li>The speed thresholds for those specific files</li>
+        <li>The soundtrack card color associated only with the soundtrack that is shared</li>
+        <li>The soundtrack&#39;s name</li>
+      </ul>
+      <p><strong>Data NOT Shared</strong></p>
+      <ul>
+        <li>Distance played for the shared soundtrack, or for any soundtrack</li>
+        <li>Any personal information</li>
+      </ul>
       <h2 id="data-we-do-not-collect">Data We Do NOT Collect</h2>
       <p>Dynamidrive does NOT collect:</p>
       <ul>
         <li>Your name, email address, or phone number</li>
         <li>Device identifiers for advertising purposes</li>
         <li>Browsing history</li>
-        <li>Contacts or photos (beyond audio files you explicitly select)</li>
+        <li>Contacts or photos</li>
         <li>Microphone audio (we do not record or listen to ambient audio)</li>
-        <li>Usage analytics or crash reports (no third-party analytics services are integrated)</li>
-        <li>Precise location history (we only use real-time location, not historical data)</li>
+        <li>Precise location history (the App only uses real-time location, not historical data)</li>
       </ul>
       <h2 id="third-party-services">Third-Party Services</h2>
       <h3 id="tomtom-api">TomTom API</h3>
@@ -209,13 +218,6 @@
       <h3 id="mapbox-optional-map-display-">Mapbox (Optional Map Display)</h3>
       <p><strong>Purpose:</strong> Provides enhanced map styles for the optional map background feature.</p>
       <p><strong>Status:</strong> Currently disabled in the App but may be re-enabled in future updates.</p>
-      <p><strong>Data Shared (when enabled):</strong> </p>
-      <ul>
-        <li>Your approximate location (rounded to 4 decimal places to reduce precision)</li>
-        <li>Map style requests</li>
-      </ul>
-      <p><strong>Control:</strong> This feature is entirely optional and only activates when you select &quot;Map&quot;
-        as your background type.</p>
       <h3 id="apple-services">Apple Services</h3>
       <p>The App uses the following Apple frameworks and services:</p>
       <ul>
@@ -226,6 +228,25 @@
       </ul>
       <p>These services are governed by <a href="https://www.apple.com/legal/privacy/">Apple&#39;s Privacy Policy</a>.
       </p>
+      <h2 id="sharing-feedback-via-testflight">Sharing Feedback via TestFlight</h2>
+      <p>When sharing feedback using Apple&#39;s TestFlight service, you share:</p>
+      <ul>
+        <li>Device model (eg. iPhone 17 Pro)</li>
+        <li>iOS version and build number</li>
+        <li>App version and build form TestFlight</li>
+        <li>App Environment (sandbox or production)</li>
+        <li>Crash reports</li>
+        <li>Performance and memory diagnostics</li>
+        <li>System logs related to only Dynamidrive</li>
+        <li>Voluntarily shared screenshots or screen recordings</li>
+        <li>Your written feedback</li>
+      </ul>
+      <p>Who sees this data:</p>
+      <ul>
+        <li>The app developer (Kai del Castillo)</li>
+        <li>Apple (only for processing and hosting diagnostics)</li>
+        <li>Other testers and/or developers never see your submissions</li>
+      </ul>
       <h2 id="data-storage-and-security">Data Storage and Security</h2>
       <h3 id="local-storage">Local Storage</h3>
       <ul>
@@ -264,7 +285,6 @@
           <ul>
             <li>Enable/disable the &quot;Distance Traveled Statistic&quot; in App Settings</li>
             <li>Reset all distance data at any time</li>
-            <li>Location tracking can be disabled without losing other App functionality</li>
           </ul>
         </li>
       </ol>
@@ -274,8 +294,8 @@
         <li>
           <p><strong>Delete Individual Soundtracks:</strong></p>
           <ul>
-            <li>Swipe to delete soundtracks in the main screen</li>
-            <li>This removes the soundtrack configuration and associated audio files</li>
+            <li>Pressing the Delete button, pressing a soundtrack, and confirming to delete the soundtrack</li>
+            <li>This removes the soundtrack configuration and associated audio files permanently</li>
           </ul>
         </li>
         <li>
@@ -289,19 +309,19 @@
           <ul>
             <li>Uninstall the App from your device</li>
             <li>All local data will be permanently removed</li>
+            <li>All soundtracks made manually or with the AI Audio Separator will be permanently removed</li>
           </ul>
         </li>
       </ol>
       <h3 id="export-your-data">Export Your Data</h3>
       <ul>
         <li>Soundtracks can be exported as ZIP files containing all audio tracks and configuration</li>
-        <li>Exported files do NOT include distance traveled statistics (privacy by design)</li>
+        <li>Exported files do NOT include distance traveled statistics</li>
         <li>Shared soundtracks do NOT contain any location or tracking information</li>
       </ul>
       <h2 id="children-s-privacy">Children&#39;s Privacy</h2>
       <p>Dynamidrive does not knowingly collect personal information from children under 13. The App is intended for
-        users of driving age (typically 16+). If you believe we have inadvertently collected information from a child
-        under 13, please contact us immediately.</p>
+        users of driving age (typically 16+), but can be also used by passengers.</p>
       <h2 id="changes-to-this-privacy-policy">Changes to This Privacy Policy</h2>
       <p>We may update this Privacy Policy from time to time. When we make changes:</p>
       <ul>
@@ -340,8 +360,8 @@
       <p>Dynamidrive does NOT use:</p>
       <ul>
         <li>Third-party advertising networks</li>
-        <li>Analytics services (e.g., Google Analytics, Firebase Analytics)</li>
-        <li>Crash reporting services (e.g., Crashlytics)</li>
+        <li>Analytics services except for live backend server usage</li>
+        <li>Crash reporting services except for Apple&#39;s TestFlight</li>
         <li>User behavior tracking</li>
         <li>Cross-app tracking</li>
       </ul>
@@ -374,9 +394,7 @@
       </ul>
       <h2 id="contact-information">Contact Information</h2>
       <p>If you have questions about this Privacy Policy or how we handle your data, please contact:</p>
-      <p><strong>Developer:</strong> Kai del Castillo<br><strong>Email:</strong> [Contact information to be
-        added]<br><strong>Instagram:</strong> @kaianthony.d<br><strong>Snapchat:</strong> [Available through the
-        App&#39;s Credits section]</p>
+      <p><strong>Developer:</strong> Kai del Castillo<br><strong>Email:</strong> [Kaianthonyd@dynamidrive.app]</p>
       <h2 id="transparency-commitment">Transparency Commitment</h2>
       <p>We believe in complete transparency about data collection and usage. This Privacy Policy is written in clear,
         accessible language to ensure you understand exactly how your data is handled. If anything is unclear, please
@@ -384,10 +402,10 @@
       <h2 id="summary">Summary</h2>
       <p><strong>What we collect:</strong> Real-time location (for speed and maps), audio files you choose to upload
         (temporarily for AI processing), and local app preferences.</p>
-      <p><strong>What we DON&#39;T collect:</strong> Personal identifying information, analytics, advertising data, or
-        permanent location history.</p>
+      <p><strong>What we DON&#39;T collect:</strong> Personal identifying information, app usage analytics, advertising
+        data, or permanent location history.</p>
       <p><strong>Your control:</strong> Full control over location permissions, distance tracking, and all stored data.
-        Delete anytime.</p>
+        You can delete this at anytime.</p>
       <p><strong>Third parties:</strong> Only TomTom (for speed limits) receives location data. AI processing server
         temporarily stores uploaded audio files.</p>
       <p><strong>Data deletion:</strong> AI uploads deleted after 10 minutes. All other data stays on your device until
