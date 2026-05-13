@@ -46,17 +46,17 @@
     </section>
     <section class="limit-width align-top unlimited-height logo-font-headers">
       <h2 id="introduction">Introduction</h2>
-      <p>Dynamidrive (&quot;the App&quot;) is committed to protecting your privacy. This Privacy Policy explains how we
-        collect, use, and protect your information when you use our application.</p>
+      <p>Dynamidrive (&quot;the App&quot;) is committed to protecting your privacy. This Privacy Policy explains how the App
+        uses, stores, shares, and protects information when you use the application.</p>
       <p><strong>Developer Information:</strong><br>Dynamidrive is developed and maintained solely by Kai del Castillo.
         All development, updates, and changes to the App are managed exclusively by Kai del Castillo.</p>
       <h2 id="technology-stack">Technology Stack</h2>
       <p>Dynamidrive is built primarily using Apple&#39;s SwiftUI framework for iOS. The App leverages native iOS
         frameworks and APIs to deliver its functionality, plus selected third-party tools for map rendering, ZIP
         export/import, and optional AI audio processing.</p>
-      <h2 id="information-we-collect">Information We Collect</h2>
+      <h2 id="information-the-app-uses-or-stores">Information the App Uses or Stores</h2>
       <h3 id="1-location-data">1. Location Data</h3>
-      <p><strong>Data the App collects:</strong></p>
+      <p><strong>What the App Uses:</strong></p>
       <ul>
         <li>Real-time GPS coordinates (latitude, longitude)</li>
         <li>Current speed</li>
@@ -100,7 +100,7 @@
         <li>Location permissions can be revoked at any time through your iOS Settings</li>
       </ul>
       <h3 id="2-distance-traveled-statistics">2. Distance Traveled Statistics</h3>
-      <p><strong>What We Collect:</strong></p>
+      <p><strong>What is stored in the App:</strong></p>
       <ul>
         <li>Total distance traveled while a specific soundtrack is playing</li>
         <li>This data is calculated using GPS coordinates</li>
@@ -127,9 +127,7 @@
       <p><strong>User-Created Soundtracks:</strong></p>
       <ul>
         <li>Audio files you import into the app are stored locally on your device</li>
-        <li>All files are saved onto your device in a hidden folder.</li>
         <li>Audio files are NEVER automatically uploaded to any server</li>
-        <li>You maintain full control over your audio files</li>
       </ul>
       <p><strong>AI Audio Separation Feature:</strong></p>
       <p>When you use the AI-powered audio separation feature:</p>
@@ -139,15 +137,15 @@
           <ul>
             <li>You voluntarily select an audio file to upload</li>
             <li>The file is sent to Dynamidrive&#39;s secure AI processing backend</li>
-            <li>The uploaded filename may be sanitized and given a random suffix so the backend can process it safely</li>
+            <li>The uploaded filename may be sanitized and given a random suffix</li>
             <li>The upload uses HTTPS encryption</li>
           </ul>
         </li>
         <li>
           <p><strong>Processing:</strong></p>
           <ul>
-            <li>Your audio file is processed using the Demucs AI model to separate it into component tracks (vocals,
-              drums, bass, other instruments)</li>
+            <li>Your audio file is processed using AI audio separation to separate it into component tracks (vocals,
+              drums, bass, and other instruments)</li>
             <li>Processing typically takes a few minutes depending on file size</li>
           </ul>
         </li>
@@ -176,7 +174,7 @@
         <li>This resume data is stored only on your device and is cleared when the interrupted upload state is cleared</li>
       </ul>
       <h3 id="4-app-settings-and-preferences">4. App Settings and Preferences</h3>
-      <p><strong>What We Store:</strong></p>
+      <p><strong>What is stored in the App:</strong></p>
       <ul>
         <li>User interface preferences (colors, backgrounds, sorting options)</li>
         <li>Audio configuration settings (volume levels, speed thresholds)</li>
@@ -195,23 +193,23 @@
         <li>Settings are NOT uploaded to external servers</li>
       </ul>
       <h3 id="5-in-app-purchases">5. In-App Purchases</h3>
-      <p><strong>What We Process:</strong></p>
+      <p><strong>What the App Processes:</strong></p>
       <ul>
         <li>In-app purchases are processed entirely through Apple&#39;s StoreKit framework</li>
-        <li>We do NOT collect, store, or have access to your payment information</li>
-        <li>We only store a local flag indicating whether you have an active subscription or have made a purchase</li>
+        <li>Dynamidrive does NOT collect, store, or have access to your payment information</li>
+        <li>The App only stores a local flag indicating whether you have an active subscription or have made a purchase</li>
         <li>All payment processing is handled by Apple</li>
       </ul>
       <p><strong>Purchase Data:</strong></p>
       <ul>
         <li>Subscription status is verified through Apple&#39;s servers</li>
-        <li>We receive anonymized transaction information from Apple</li>
+        <li>The App receives anonymized transaction information from Apple</li>
         <li>No credit card or personal payment information is accessible to us</li>
       </ul>
       <h3 id="6-sharing-soundtracks-and-playlists">6. Sharing Soundtracks and Playlists</h3>
       <p><strong>Data Shared:</strong></p>
       <ul>
-        <li>Files uploaded only for the soundtrack that is shared</li>
+        <li>Files uploaded only for the soundtrack(s) that are shared</li>
         <li>The speed thresholds for those specific files</li>
         <li>Whether a track uses a track preset or custom value</li>
         <li>The soundtrack card color associated only with the soundtrack that is shared</li>
@@ -240,8 +238,8 @@
         <li>Now Playing information can include soundtrack playback status, speed-related display text, and distance values
           so the app can work while you drive</li>
       </ul>
-      <h2 id="data-we-do-not-collect">Data We Do NOT Collect</h2>
-      <p>Dynamidrive does NOT collect:</p>
+      <h2 id="data-dynamidrive-does-not-collect">Data Dynamidrive Does NOT Collect</h2>
+      <p>Dynamidrive does NOT collect or ask for:</p>
       <ul>
         <li>Your name, email address, or phone number</li>
         <li>Device identifiers for advertising purposes</li>
@@ -333,7 +331,7 @@
       <ul>
         <li>Most user data (soundtracks, settings, playlists, preferences, local distance data, and notification state) is
           stored locally on your device</li>
-        <li>We use iOS standard storage mechanisms (UserDefaults, AppStorage, SwiftData where applicable, and the Documents
+        <li>The App uses iOS standard storage mechanisms (UserDefaults, AppStorage, SwiftData where applicable, and the Documents
           directory)</li>
         <li>Data persists until you delete the App or manually delete specific content</li>
       </ul>
@@ -342,7 +340,7 @@
         <li>Audio files uploaded for AI separation are stored temporarily on our secure backend server</li>
         <li>Files are encrypted in transit using HTTPS</li>
         <li><strong>Files are automatically and permanently deleted 10 minutes after processing completes</strong></li>
-        <li>We do not maintain backups of uploaded files</li>
+        <li>Dynamidrive does not maintain backups of uploaded files</li>
         <li>Server location: Hosted on secure cloud infrastructure</li>
       </ul>
       <h3 id="security-measures">Security Measures</h3>
@@ -414,7 +412,7 @@
         <li>Shared soundtracks do NOT contain any location or tracking information</li>
       </ul>
       <h2 id="children-s-privacy">Children&#39;s Privacy</h2>
-      <p>Dynamidrive does not knowingly collect personal information from children under 13. The App is intended for
+      <p>Dynamidrive does not knowingly ask for personal information from children under 13. The App is intended for
         users of driving age (typically 16+), but can be also used by passengers.</p>
       <h2 id="changes-to-this-privacy-policy">Changes to This Privacy Policy</h2>
       <p>We may update this Privacy Policy from time to time. When we make changes:</p>
@@ -424,13 +422,14 @@
         <li>Continued use of the App after changes constitutes acceptance of the updated policy</li>
       </ul>
       <h2 id="international-users">International Users</h2>
-      <p>Dynamidrive is developed in the United States. If you use the App from outside the United States, please be
-        aware that your information may be transferred to, stored, and processed in the United States or other countries
-        where our service providers operate.</p>
+      <p>Dynamidrive can be used anywhere in the world, but it is intended primarily for use in the United States.
+        Your location, including location used outside the United States, is not collected by Dynamidrive or stored as a
+        location history.</p>
       <h2 id="background-location-usage">Background Location Usage</h2>
       <p><strong>Why We Need &quot;Always Allow&quot; Permission:</strong></p>
       <p>Dynamidrive requests &quot;Always Allow&quot; location permission to enable background functionality:</p>
       <ul>
+        <li>It removes the blue navigation arrow from the status bar or Dynamic Island while background location is active</li>
         <li>Music volume adjusts based on your speed even when the app is in the background</li>
         <li>Now Playing information updates with current speed and distance</li>
         <li>Background audio playback and remote controls continue when appropriate</li>
@@ -465,13 +464,13 @@
       </ul>
       <p>The Dynamidrive website may use Google Analytics for website traffic measurement. The App may also make limited
         service checks to Dynamidrive servers, such as checking whether the AI service is available.</p>
-      <p>We do not sell, rent, or share your personal information with third parties for their marketing purposes.</p>
+      <p>Dynamidrive does not sell, rent, or share your personal information with third parties for their marketing purposes.</p>
       <h2 id="california-privacy-rights-ccpa-">California Privacy Rights (CCPA)</h2>
       <p>If you are a California resident, you have the right to:</p>
       <ul>
-        <li>Know what personal information we collect</li>
+        <li>Know what personal information the App uses, stores, or shares</li>
         <li>Request deletion of your personal information</li>
-        <li>Opt-out of the sale of personal information (Note: We do not sell personal information)</li>
+        <li>Opt-out of the sale of personal information (Note: Dynamidrive does not sell personal information)</li>
       </ul>
       <p>To exercise these rights, simply uninstall the App to delete all local data, or contact us using the
         information below.</p>
@@ -479,7 +478,7 @@
       <p>If you are located in the European Economic Area (EEA), you have rights under the General Data Protection
         Regulation (GDPR):</p>
       <ul>
-        <li><strong>Right to Access:</strong> You can request information about data we process</li>
+        <li><strong>Right to Access:</strong> You can request information about data the App processes</li>
         <li><strong>Right to Rectification:</strong> You can correct inaccurate data (by modifying settings in the App)
         </li>
         <li><strong>Right to Erasure:</strong> You can request deletion of your data (by uninstalling the App)</li>
@@ -498,13 +497,13 @@
       <p>If you have questions about this Privacy Policy or how we handle your data, please contact:</p>
       <p><strong>Developer:</strong> Kai del Castillo<br><strong>Email:</strong> <a href="mailto:Kaianthonyd@dynamidrive.app">Kaianthonyd@dynamidrive.app</a></p>
       <h2 id="transparency-commitment">Transparency Commitment</h2>
-      <p>We believe in complete transparency about data collection and usage. This Privacy Policy is written in clear,
+      <p>We believe in complete transparency about data handling and usage. This Privacy Policy is written in clear,
         accessible language to ensure you understand exactly how your data is handled. If anything is unclear, please
         don&#39;t hesitate to contact us.</p>
       <h2 id="summary">Summary</h2>
-      <p><strong>What we collect:</strong> Real-time location (for speed, maps, and distance features), audio files you
-        choose to upload temporarily for AI processing, local app preferences, playlists, and notification state.</p>
-      <p><strong>What we DON&#39;T collect:</strong> Personal identifying information, third-party app analytics,
+      <p><strong>What the App uses or stores:</strong> Real-time location (for speed, maps, and distance features), audio
+        files you choose to upload temporarily for AI processing, local app preferences, playlists, and notification state.</p>
+      <p><strong>What Dynamidrive DOESN&#39;T collect:</strong> Personal identifying information, third-party app analytics,
         advertising data, vehicle information, or permanent location history.</p>
       <p><strong>Your control:</strong> Full control over location permissions, distance tracking, and all stored data.
         You can delete this at any time.</p>
