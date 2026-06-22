@@ -42,7 +42,7 @@
   <main>
     <section class="title">
       <h1 class="logo-font">Privacy Policy</h1>
-      <h3 class="logo-font">Last updated: May 11th, 2026</h3>
+      <h3 class="logo-font">Last updated: June 22nd, 2026</h3>
     </section>
     <section class="limit-width align-top unlimited-height logo-font-headers">
       <h2 id="introduction">Introduction</h2>
@@ -53,7 +53,7 @@
       <h2 id="technology-stack">Technology Stack</h2>
       <p>Dynamidrive is built primarily using Apple&#39;s SwiftUI framework for iOS. The App leverages native iOS
         frameworks and APIs to deliver its functionality, plus selected third-party tools for map rendering, ZIP
-        export/import, and optional AI audio processing.</p>
+        export/import, and optional on-device audio processing.</p>
       <h2 id="information-the-app-uses-or-stores">Information the App Uses or Stores</h2>
       <h3 id="1-location-data">1. Location Data</h3>
       <p><strong>What the App Uses:</strong></p>
@@ -129,61 +129,24 @@
         <li>Audio files you import into the app are stored locally on your device</li>
         <li>Audio files are NEVER automatically uploaded to any server</li>
       </ul>
-      <p><strong>AI Audio Separation Feature:</strong></p>
-      <p>When you use the AI-powered audio separation feature:</p>
-      <ol>
-        <li>
-          <p><strong>Upload Process:</strong></p>
-          <ul>
-            <li>You voluntarily select an audio file to upload</li>
-            <li>The file is sent to Dynamidrive&#39;s secure AI processing backend</li>
-            <li>The uploaded filename may be sanitized and given a random suffix</li>
-            <li>The upload uses HTTPS encryption</li>
-          </ul>
-        </li>
-        <li>
-          <p><strong>Processing:</strong></p>
-          <ul>
-            <li>Your audio file is processed using AI audio separation to separate it into component tracks (vocals,
-              drums, bass, and other instruments)</li>
-            <li>Processing typically takes a few minutes depending on file size</li>
-          </ul>
-        </li>
-        <li>
-          <p><strong>Automatic Deletion:</strong></p>
-          <ul>
-            <li><strong>Your original uploaded file and all processed files are automatically deleted from our servers
-                10 minutes after processing completes</strong></li>
-            <li>This deletion is permanent and cannot be recovered</li>
-          </ul>
-        </li>
-        <li>
-          <p><strong>Downloaded Files:</strong></p>
-          <ul>
-            <li>Separated tracks you download are stored locally on your device</li>
-            <li>These files remain only on your device until you manually delete them</li>
-            <li>If processing completes while the app is in the background, Dynamidrive may send a local notification to
-              let you know the separated tracks are ready</li>
-          </ul>
-        </li>
-      </ol>
-      <p><strong>Interrupted AI Uploads:</strong></p>
+      <p><strong>Audio Separation Feature:</strong></p>
+      <p>When you use the audio separation feature:</p>
       <ul>
-        <li>If an AI upload is interrupted, the App may store a local bookmark to the selected file, the original filename,
-          the generated backend name, and the upload start time so the upload or polling flow can resume</li>
-        <li>This resume data is stored only on your device and is cleared when the interrupted upload state is cleared</li>
+        <li>You voluntarily select an audio file to process</li>
+        <li>Audio separation happens locally on your device</li>
+        <li>Your selected audio file is not uploaded to Dynamidrive servers for audio separation</li>
       </ul>
       <h3 id="4-app-settings-and-preferences">4. App Settings and Preferences</h3>
       <p><strong>What is stored in the App:</strong></p>
       <ul>
         <li>User interface preferences (colors, backgrounds, sorting options)</li>
         <li>Audio configuration settings (volume levels, speed thresholds)</li>
-        <li>Feature toggles (AI features enabled/disabled, map style preferences)</li>
+        <li>Feature toggles (audio separation features enabled/disabled, map style preferences)</li>
         <li>In-app purchase status (subscription and one-time purchase status)</li>
         <li>Playlist names, playlist membership, selected playlist, and dismissed playlist suggestions</li>
         <li>Notification preferences for distance milestones and state-entry alerts</li>
         <li>Shortcut/deep-link state needed for app actions such as opening or controlling Dynamidrive</li>
-        <li>Cached AI service availability messages downloaded from Dynamidrive&#39;s website configuration file</li>
+        <li>Cached audio separation availability messages downloaded from Dynamidrive&#39;s website configuration file</li>
       </ul>
       <p><strong>Storage:</strong></p>
       <ul>
@@ -226,7 +189,7 @@
       <h3 id="7-notifications-and-now-playing">7. Notifications and Now Playing</h3>
       <p><strong>Local Notifications:</strong></p>
       <ul>
-        <li>Dynamidrive may send local notifications for AI audio separation completion and distance milestones</li>
+        <li>Dynamidrive may send local notifications for audio separation completion and distance milestones</li>
         <li>Notification text can include the soundtrack name and distance milestone, but notifications are generated on
           your device and are not sent to Dynamidrive servers</li>
         <li>You can manage notification permission in iOS Settings and related in-app notification preferences in Settings</li>
@@ -284,14 +247,6 @@
         <li>Mapbox operates under its own privacy policy. For more information, visit:
           <a href="https://www.mapbox.com/legal/privacy">Mapbox Privacy Policy</a></li>
       </ul>
-      <h3 id="dynamidrive-ai-backend">Dynamidrive AI Backend</h3>
-      <p><strong>Purpose:</strong> To provide optional AI audio separation and service availability checks.</p>
-      <ul>
-        <li>Audio files are uploaded only when you choose to use AI Audio Separator</li>
-        <li>The App may check a small configuration file hosted on dynamidrive.app to determine whether the AI service is
-          currently available</li>
-        <li>AI service configuration checks do not include your audio files or location data</li>
-      </ul>
       <h3 id="google-analytics-website-only-">Google Analytics (Website Only)</h3>
       <p>The Dynamidrive website, including this Privacy Policy page, may use Google Analytics to understand website traffic
         and page usage. This applies to visits to dynamidrive.app in a web browser, not to app usage inside Dynamidrive.</p>
@@ -302,7 +257,7 @@
         <li><strong>StoreKit:</strong> For processing in-app purchases</li>
         <li><strong>AVFoundation:</strong> For audio playback</li>
         <li><strong>CoreLocation:</strong> For GPS and location services</li>
-        <li><strong>UserNotifications:</strong> For local AI completion and distance milestone notifications</li>
+        <li><strong>UserNotifications:</strong> For local audio separation completion and distance milestone notifications</li>
         <li><strong>MediaPlayer:</strong> For lock-screen, Control Center, and Now Playing controls</li>
       </ul>
       <p>These services are governed by <a href="https://www.apple.com/legal/privacy/">Apple&#39;s Privacy Policy</a>.
@@ -335,22 +290,17 @@
           directory)</li>
         <li>Data persists until you delete the App or manually delete specific content</li>
       </ul>
-      <h3 id="server-storage-ai-feature-only-">Server Storage (AI Feature Only)</h3>
+      <h3 id="audio-processing-storage">Audio Processing Storage</h3>
       <ul>
-        <li>Audio files uploaded for AI separation are stored temporarily on our secure backend server</li>
-        <li>Files are encrypted in transit using HTTPS</li>
-        <li><strong>Files are automatically and permanently deleted 10 minutes after processing completes</strong></li>
-        <li>Dynamidrive does not maintain backups of uploaded files</li>
-        <li>Server location: Hosted on secure cloud infrastructure</li>
+        <li>Audio files selected for audio separation are processed on your device</li>
+        <li><strong>Audio files and separated tracks are not uploaded to Dynamidrive servers for audio processing</strong></li>
       </ul>
       <h3 id="security-measures">Security Measures</h3>
       <ul>
         <li>All network communications use HTTPS encryption</li>
         <li>Location data sent to TomTom is encrypted in transit</li>
         <li>Map requests for the optional Mono map are made through Mapbox&#39;s SDK and services</li>
-        <li>AI upload endpoint uses multipart/form-data with security headers</li>
-        <li>Timeout protection: Upload and download operations have timeout limits (10 minutes for uploads, 7 minutes
-          for downloads)</li>
+        <li>Audio separation runs locally on your device, so your audio files are not transmitted to Dynamidrive for processing</li>
       </ul>
       <h2 id="your-privacy-rights-and-controls">Your Privacy Rights and Controls</h2>
       <h3 id="location-privacy-controls">Location Privacy Controls</h3>
@@ -400,7 +350,7 @@
           <ul>
             <li>Uninstall the App from your device</li>
             <li>All local data will be permanently removed</li>
-            <li>All soundtracks made manually or with the AI Audio Separator will be permanently removed</li>
+            <li>All soundtracks made manually or with the Audio Separator will be permanently removed</li>
           </ul>
         </li>
       </ol>
@@ -448,9 +398,7 @@
         <li><strong>Location Data:</strong> Not retained; used in real-time only</li>
         <li><strong>Distance Statistics:</strong> Stored indefinitely until manually deleted by you</li>
         <li><strong>Audio Files (Local):</strong> Stored until you delete the soundtrack or uninstall the App</li>
-        <li><strong>Audio Files (AI Server):</strong> Automatically deleted 10 minutes after processing completes</li>
-        <li><strong>Interrupted AI Upload Resume Data:</strong> Stored until the interrupted upload state is cleared or the
-          App is uninstalled</li>
+        <li><strong>Audio Files (Audio Processing):</strong> Processed on your device and stored locally until you delete them</li>
         <li><strong>Playlists and App Settings:</strong> Stored until you delete them or uninstall the App</li>
       </ul>
       <h2 id="advertising-analytics-and-tracking">Advertising, Analytics, and Tracking</h2>
@@ -463,7 +411,7 @@
         <li>Cross-app tracking</li>
       </ul>
       <p>The Dynamidrive website may use Google Analytics for website traffic measurement. The App may also make limited
-        service checks to Dynamidrive servers, such as checking whether the AI service is available.</p>
+        service checks to Dynamidrive servers, such as checking whether audio separation is available.</p>
       <p>Dynamidrive does not sell, rent, or share your personal information with third parties for their marketing purposes.</p>
       <h2 id="california-privacy-rights-ccpa-">California Privacy Rights (CCPA)</h2>
       <p>If you are a California resident, you have the right to:</p>
@@ -489,7 +437,7 @@
       <ul>
         <li>Location data: Consent (you grant location permission) and Contractual Necessity (required for core App
           functionality)</li>
-        <li>AI Processing: Consent (you voluntarily upload files)</li>
+        <li>Audio Processing: Consent (you voluntarily select files for on-device processing)</li>
         <li>Notifications: Consent (you grant notification permission)</li>
         <li>Website analytics: Legitimate interest in understanding website traffic and improving the website</li>
       </ul>
@@ -502,17 +450,17 @@
         don&#39;t hesitate to contact us.</p>
       <h2 id="summary">Summary</h2>
       <p><strong>What the App uses or stores:</strong> Real-time location (for speed, maps, and distance features), audio
-        files you choose to upload temporarily for AI processing, local app preferences, playlists, and notification state.</p>
+        files you choose to process on device, local app preferences, playlists, and notification state.</p>
       <p><strong>What Dynamidrive DOESN&#39;T collect:</strong> Personal identifying information, third-party app analytics,
         advertising data, vehicle information, or permanent location history.</p>
       <p><strong>Your control:</strong> Full control over location permissions, distance tracking, and all stored data.
         You can delete this at any time.</p>
       <p><strong>Third parties:</strong> TomTom may receive coordinates for speed limits, Mapbox may receive map-rendering
-        requests when Mono map is enabled, Apple handles purchases and system services, and the AI processing server
-        temporarily stores uploaded audio files.</p>
-      <p><strong>Data deletion:</strong> AI uploads deleted after 10 minutes. All other data stays on your device until
-        you delete it.</p>
-      <p><strong>This Privacy Policy is effective as of May 11, 2026.</strong></p>
+        requests when Mono map is enabled, and Apple handles purchases and system services. Audio separation runs on your
+        device and does not send your audio files to Dynamidrive servers.</p>
+      <p><strong>Data deletion:</strong> Audio files processed by the Audio Separator stay on your device until you delete
+        them. All other local data stays on your device until you delete it.</p>
+      <p><strong>This Privacy Policy is effective as of June 22, 2026.</strong></p>
     </section>
   </main>
 

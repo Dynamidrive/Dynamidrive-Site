@@ -16,9 +16,11 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 100vw;
+    box-sizing: border-box;
+    width: 100%;
     height: 50vh;
     max-height: 800px;
+    padding-inline: clamp(1rem, 5vw, 3rem);
   }
 
   section.title {
