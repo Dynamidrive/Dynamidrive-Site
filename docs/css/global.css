@@ -103,9 +103,7 @@ nav {
   width: 100vw;
   box-sizing: border-box;
   padding: var(--spacing-base);
-  background: linear-gradient(to top, var(--color-background-transparent), var(--color-background-light-transparent));
-  border-bottom: 2px solid transparent;
-  border-image: linear-gradient(to right, var(--color-background), var(--color-secondary), var(--color-background)) 1;
+  background: #1D1D1D;
 
   img {
     height: 40px;
