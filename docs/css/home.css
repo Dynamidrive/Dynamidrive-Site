@@ -39,8 +39,8 @@ main {
       z-index: 2;
       font-size: 4rem;
       margin: 0;
-      width: 600px;
-      max-width: 90vw;
+      width: 960px;
+      max-width: 94vw;
       padding-bottom: 0.5rem;
       text-shadow: 0 0 24px rgba(0, 0, 0, .8);
       transition: 0.2s ease-out;
@@ -107,12 +107,18 @@ main {
   }
 }
 
+.logo-font.hero-title {
+  font-weight: 700;
+  font-variation-settings: 'wght' 700, 'wdth' 125;
+}
+
 @media (max-width: 600px) {
   main {
     section.welcome {
       h1 {
         font-size: 2.5rem;
-        width: 350px;
+        width: 520px;
+        max-width: 94vw;
       }
     }
   }

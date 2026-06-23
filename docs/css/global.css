@@ -1,7 +1,11 @@
 /* Logo font */
 @font-face {
-  font-family: 'PP Neue Machina';
-  src: url('../fonts/PPNeueMachina-Ultrabold.otf') format('opentype');
+  font-family: 'SF Pro Expanded';
+  src: url('../fonts/SF-Pro.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -34,7 +38,7 @@
   --logo-text-color-dark-gradient: linear-gradient(to bottom, var(--color-tertiary), var(--color-tertiary-dark));
   --logo-text-color-light-gradient: linear-gradient(to bottom, var(--color-text), var(--color-muted));
   --font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --font-logo: 'PP Neue Machina', sans-serif;
+  --font-logo: 'SF Pro Expanded', sans-serif;
   --font-size-base: 16px;
   --spacing-base: 1rem;
 }
@@ -61,7 +65,9 @@ a {
 .logo-font-children *:is(h1, h2, h3, h4, h5, h6, p, a, li),
 .logo-font-headers *:is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--font-logo);
-  font-weight: normal;
+  font-weight: 600;
+  font-stretch: expanded;
+  font-variation-settings: 'wght' 600, 'wdth' 125;
   margin: 0;
 
   &.gradient {
@@ -113,6 +119,11 @@ nav {
     gap: var(--spacing-base);
   }
 
+  .nav-brand-text {
+    font-weight: 700;
+    font-variation-settings: 'wght' 700, 'wdth' 125;
+  }
+
   ul.nav-links {
     list-style: none;
     display: flex;
@@ -122,6 +133,8 @@ nav {
 
     li a {
       color: var(--color-text-muted);
+      font-weight: 600;
+      font-variation-settings: 'wght' 600, 'wdth' 125;
       text-decoration: underline 1.5px transparent;
       transition: 0.2s ease-out;
 
@@ -129,6 +142,11 @@ nav {
       &.active,
       &:focus {
         color: var(--color-text);
+      }
+
+      &.active {
+        font-weight: 700;
+        font-variation-settings: 'wght' 700, 'wdth' 125;
       }
 
       &:hover,
@@ -178,6 +196,15 @@ footer {
   flex-wrap: wrap;
   gap: 0.5rem;
 
+  p,
+  li,
+  a {
+    font-family: var(--font-logo);
+    font-weight: 400;
+    font-stretch: expanded;
+    font-variation-settings: 'wght' 400, 'wdth' 125;
+  }
+
   ul {
     list-style: none;
     padding: 0;
@@ -197,6 +224,11 @@ footer {
       }
     }
   }
+}
+
+footer.logo-font-children :is(p, li, a) {
+  font-weight: 400;
+  font-variation-settings: 'wght' 400, 'wdth' 125;
 }
 
 @media (max-width: 550px) {
