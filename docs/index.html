@@ -14,7 +14,7 @@
   <meta name="description"
     content="Dynamidrive is a music player that dynamically adjusts your music based on your driving.">
   <meta name="keywords" content="Dynamidrive, music player, dynamic music, driving music, adaptive music">
-  <meta name="author" content="ButterDogCo">
+  <meta name="author" content="Kai del Castillo">
   <link rel="preload" href="fonts/SF-Pro.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWH179TWSL"></script>
@@ -30,34 +30,191 @@
 <body>
   <nav class="backdrop-blur">
     <section>
-      <img src="img/logo/Icon_Glass_Dark.png" alt="Dynamidrive Logo" class="logo">
+      <img src="img/logo/Icon_Glass_Dark.png" alt="Dynamidrive Logo" class="logo" width="40" height="40">
       <h1 class="logo-font gradient nav-brand-text">Dynamidrive</h1>
     </section>
     <ul class="nav-links logo-font-children">
       <li><a href="#" class="nav-link active">Home</a></li>
-      <li><a href="https://testflight.apple.com/join/FBKN7czt" class="nav-link">Download</a></li>
+      <li><a href="#download-section" class="nav-link">Download</a></li>
     </ul>
   </nav>
 
   <main>
-    <section class="welcome">
+    <section class="welcome" id="welcome-section">
       <div class="animated-cards" id="animated-cards-container"></div>
-      <h1 class="logo-font hero-title">Your music just got more dynamic</h1>
+      <h2 class="logo-font hero-title">Your music just got&nbsp;more&nbsp;dynamic</h2>
+
+      <a href="#speed-section" class="learn-more-link">
+        <p>Learn More</p>
+        <svg width="143" height="37" viewBox="0 0 143 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.87161 11.521L62.5303 34.5613C65.3564 35.6549 68.7465 37 71.5156 37C74.2533 37 77.7004 35.6549 80.5265 34.5613L139.129 11.521C141.524 10.5716 143 8.47197 143 6.27905C143 2.71559 140.37 0 136.758 0C134.946 0 132.487 1.03709 130.935 1.59659L67.2905 26.6603H75.7093L12.0393 1.59659C10.5123 1.03709 8.08512 0 6.21622 0C2.62952 0 0 2.71559 0 6.27905C0 8.47197 1.4758 10.5716 3.87161 11.521Z" fill="white"/>
+        </svg>
+      </a>
     </section>
-    <section class="limit-width">
-      <h1 class="logo-font">Out now in beta!</h1>
-      <p class="logo-font">Learn how to join the beta <a href="https://testflight.apple.com/join/FBKN7czt">here</a>.</p>
+
+    <section class="speed-section split" id="speed-section">
+      <div class="text">
+        <h2 class="logo-font">Vibes That Match Your&nbsp;Speed</h2>
+        <hr>
+        <p>It adjusts the different instruments in your music to give a more dynamic driving experience. So
+          you have a more energetic vibe while driving, and a calmer one when stopped.</p>
+      </div>
+      
+      <aside class="track-volumes-illustration">
+        <div class="track-volumes-container">
+          <div class="track-volume-container">
+            <div class="track-volume drums" id="drums-volume"></div>
+            <span>Drums</span>
+          </div>
+          <div class="track-volume-container">
+            <div class="track-volume" id="bass-volume"></div>
+            <span>Bass</span>
+          </div>
+          <div class="track-volume-container">
+            <div class="track-volume" id="vocals-volume"></div>
+            <span>Vocals</span>
+          </div>
+          <div class="track-volume-container">
+            <div class="track-volume" id="Other-volume"></div>
+            <span>Other</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="theming-section split" id="theming-section">
+      <div class="text">
+        <h2 class="logo-font">Set The App To Match Your
+          <div class="make-and-model" id="theming-vehicle-container">
+            <span id="theming-vehicle-span-1" class="one">Make and Model</span>
+            <span id="theming-vehicle-span-2" class="two">Make and Model</span>
+          </div>
+        </h2>
+        <hr>
+        <p>Extend what makes your car yours and set your background to match your car. The background colors,
+          and up to 3 racing stripes are infinitely customizable so you can show off your car in style.</p>
+      </div>
+      
+      <aside class="theming-stripes-illustration">
+        <div class="theming-stripes-container">
+          <div class="theming-stripe" id="stripe-1"></div>
+          <div class="theming-stripe" id="stripe-2"></div>
+          <div class="theming-stripe" id="stripe-3"></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="privacy-section split" id="privacy-section">
+      <div class="text">
+        <h2 class="logo-font">All&nbsp;Offline And On-Device</h2>
+        <hr>
+        <p>Your music stays yours. Your soundtracks are stored locally, and the Audio Seperator processes your file right on
+          your iPhone, and isn't sent to a server.<br>We don't collect, or sell, any information about you while you use the app.
+          Because that's how it should be. <a href="./pp">Learn more</a>.</p>
+      </div>
+      
+      <aside class="privacy-illustration">
+        <svg width="281" height="476" viewBox="0 0 313 529" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M70.5924 496.927C44.7667 496.927 31.813 484.412 31.813 459.482V69.2422C31.813 44.3139 44.7667 31.72 70.5924 31.72H242.585C268.235 31.72 281.186 44.3139 281.186 69.2422V459.482C281.186 484.412 268.235 496.927 242.585 496.927H70.5924Z" fill="#007AFF"/>
+          <path d="M66.7892 528.645H246.211C287.539 528.645 313 504.002 313 463.854V64.7932C313 24.6433 287.539 0 246.211 0H66.7892C25.381 0 0 24.6433 0 64.7932V463.854C0 504.002 25.381 528.645 66.7892 528.645ZM70.5926 496.927C44.7669 496.927 31.8131 484.412 31.8131 459.482V69.2421C31.8131 44.3138 44.7669 31.7199 70.5926 31.7199H242.586C268.235 31.7199 281.187 44.3138 281.187 69.2421V459.482C281.187 484.412 268.235 496.927 242.586 496.927H70.5926ZM103.346 478.973H210.009C215.832 478.973 219.998 474.727 219.998 468.73C219.998 462.812 215.832 458.746 210.009 458.746H103.346C97.5229 458.746 93.1006 462.812 93.1006 468.73C93.1006 474.727 97.5229 478.973 103.346 478.973ZM126.571 78.8488H186.607C195.195 78.8488 201.807 72.2398 201.807 63.4781C201.807 54.8143 195.195 48.285 186.607 48.285H126.571C117.806 48.285 111.194 54.8143 111.194 63.4781C111.194 72.2398 117.806 78.8488 126.571 78.8488Z" fill="white" fill-opacity="0.85"/>
+          <path d="M121.95 335.968H192.05C202.14 335.968 208 329.905 208 319.095V265.366C208 254.556 202.14 248.545 192.05 248.545H121.95C111.861 248.545 106 254.556 106 265.366V319.095C106 329.905 111.861 335.968 121.95 335.968ZM119.428 252.961H128.696V230.012C128.696 210.384 141.072 198.815 156.963 198.815C172.829 198.815 185.356 210.384 185.356 230.012V252.961H194.549V231.014C194.549 204.532 177.37 190 156.963 190C136.63 190 119.428 204.532 119.428 231.014V252.961Z" fill="white" fill-opacity="0.85"/>
+        </svg>
+      </aside>
+    </section>
+
+    <section class="distance-section split" id="distance-section">
+      <div class="text">
+        <h2 class="logo-font">Rack Up Those Miles</h2>
+        <hr>
+        <p>Almost every music app shows your most listened to song, but it's how far you go that counts. See how far you go while
+          listing to your soundtracks, and get notified when you reach a milestone!</p>
+      </div>
+      
+      <aside class="distance-illustration">
+        <img src="./img/DistanceIllustration.png" alt="Distance Illustration" loading="lazy">
+        <span class="distance" id="distance-display">0 mi</span>
+      </aside>
+    </section>
+
+    <section class="download-section" id="download-section">
+      <h2 class="logo-font">Ready for a more dynamic experience?</h2>
+      <a href="https://testflight.apple.com/join/FBKN7czt" rel="noopener noreferrer">
+        <p>Join the beta on TestFlight</p>
+        <img src="./img/TestFlightButton.png" alt="TestFlight Badge" loading="lazy" height="80">
+      </a>
+      <p>Only available for iOS 26 and 18.</p>
+    </section>
+
+    <section class="faq-section" id="faq-section">
+      <h2 class="logo-font">Frequently Asked Questions</h2>
+      <ul class="faq-list">
+        <li class="faq-item">
+          <details>
+            <summary>How do I make a soundtrack?</summary>
+            <span>There are currently 3 ways you can create a soundtrack, which are all available in the Create Soundtrack menu:</span>
+            <ol>
+              <li>Using our free audio seperator, which seperates an audio file you provide into the Drums, Bass, Voice, and Other tracks.</li>
+              <li>If you have your own seperate audio files, you can upload them manually.</li>
+              <li>If someone has shared a soundtrack or playlist with you, it can be imported.*</li>
+            </ol>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>What is the Audio Seperator?</summary>
+            <p>The Audio Seperator is an on-device AI model that analyzes a provided MP3 file and seperates it into 4 tracks: Drums,
+              Bass, Vocals, and Other.</p>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>How can I get the MP3 file of a song?</summary>
+            <p>You can find MP3 files online. Some artists provide them for free, and some require payment. Another theoretical way
+              that we don't recommend probably is going to a video platform (like YouTube), searching for a song, copying the link, and
+              pasting it into a YouTube to MP3 website. We don't recommend using <a href="https://cnvmp3.com/">cnvmp3.com</a>, as it
+              may work and go against YouTube's TOS.</p>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>Why aren't MP3 files provided?</summary>
+            <p>We can't provide music files for you due to copyright laws and licensing fees.</p>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>What is included with Dynamidrive Plus?</summary>
+            <p>Dynamidrive Plus adds: Unlimited soundtracks, unlimited tracks, soundtrack looping, soundtrack and playlist sharing, custom colors, and more to come.</p>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>When will Dynamidrive be on the App Store?</summary>
+            <p>Hopefully soon! I'm actively working on Dynamidrive, and believe it's getting very close to a state that can be released onto the App Store.</p>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>Can you give me Robux?</summary>
+            <p>No.</p>
+          </details>
+        </li>
+      </ul>
+
+      <!-- TODO: logo font and CSS styling -->
+      <p class="disclaimer logo-font">*Requires a Dynamidrive Plus subscription.</p>
     </section>
   </main>
 
   <footer class="logo-font-children dark-color">
     <ul>
-      <li><a href="pp">Privacy Policy</a></li>
+      <li><a href="https://discord.gg/eeyu9UUnwc">Discord</a></li>
+      <li><a href="./pp">Privacy Policy</a></li>
+      <li><a href="mailto:support@dynamidrive.app">Support</a></li>
     </ul>
   </footer>
 
-  <script src="https://dynamidrive.statuspage.io/embed/script.js"></script>
-  <script src="js/home.js" type="module"></script>
+  <script src="./js/home.js" type="module"></script>
 </body>
 
 </html>

@@ -34,13 +34,26 @@
   --color-text: #ffffff;
   --color-text-muted: #b5b5b5;
   --color-text-link: #1e90ff;
+  --header-text-font-size: 4.4rem;
   --logo-text-color-gradient: linear-gradient(to bottom, var(--color-text), var(--color-secondary));
   --logo-text-color-dark-gradient: linear-gradient(to bottom, var(--color-tertiary), var(--color-tertiary-dark));
   --logo-text-color-light-gradient: linear-gradient(to bottom, var(--color-text), var(--color-muted));
   --font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --font-logo: 'SF Pro Expanded', sans-serif;
   --font-size-base: 16px;
+  --nav-height: 72px;
   --spacing-base: 1rem;
+  --spacing-medium: 2rem;
+  --spacing-section-side: 3rem;
+}
+
+html,
+main {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: var(--nav-height);
 }
 
 body {
@@ -50,11 +63,12 @@ body {
   font-size: var(--font-size-base);
   scrollbar-color: var(--color-secondary) var(--color-background);
   scrollbar-gutter: stable;
-  overflow: hidden scroll;
+  /* overflow: hidden scroll; */
+  overflow: hidden;
   margin: 0;
   width: 100vw;
-  /* calc(100vw - (2 * var(--spacing-base))) */
-  min-height: calc(100vh - (2 * var(--spacing-base)));
+  height: 100vh;
+  /* min-height: calc(100vh - (2 * var(--spacing-base))); */
 }
 
 a {
@@ -159,8 +173,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: calc(76px + var(--spacing-base));
-  /* Height of the nav */
+  margin-top: var(--nav-height);
+  height: calc(100vh - var(--nav-height));
+  overflow: hidden auto;
 
   section.limit-width {
     max-width: 900px;

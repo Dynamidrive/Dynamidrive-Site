@@ -1,3 +1,4 @@
+// Card configuration
 const cardImageCount = 100; // All are assumed to be named: 1.png, 2.png, etc.
 const cardImageRows = 3; // Number of rows
 const cardStartingOffset = 3; // Number of cards to push the first card off-screen
@@ -8,9 +9,96 @@ const cardAnimationSpeedMultiplier = 1.5; // Multiplier to speed up the animatio
 const cardAnimationRowFactor = 4; // Factor to slow down lower rows (higher = more consistent speed)
 const animatedCardsContainer = document.getElementById('animated-cards-container');
 
+// Section animation configuration
+const themingVehicles = [
+  "Airbus A380", // Not a car but funny
+  "Audi A4",
+  "Audi RS5",
+  "Bandit Advance", // Greenville fictional
+  "BMW 3-Series",
+  "BMW X5",
+  "Boeing 747", // Not a car but funny
+  "Cadillac Escalade",
+  "Cadillac CT5",
+  "Caseus E2", // Greenville fictional
+  "Chevrolet Camaro",
+  "Chevrolet HHR",
+  "Chevrolet SS",
+  "Chevrolet Tahoe",
+  "Cool Car", // not a car just funny
+  "Dodge Charger",
+  "Durant Manta", // Greenville fictional
+  "Fiat 500",
+  "Fiat Multipla",
+  "Ford Bronco",
+  "Ford Crown Victoria",
+  "Ford F-150",
+  "Ford Falcon",
+  "Ford Mustang",
+  "Ford Ranger",
+  "GMC Sierra",
+  "GMC Yukon",
+  "Honda Accord",
+  "Honda Civic",
+  "Honda Fit",
+  "Honda Prelude",
+  "HSV GTSR W1",
+  "Hyundai Elantra",
+  "Hyundai Sonata",
+  "Hummer H1",
+  "Jaguar XE",
+  "Jeep Cherokee",
+  "Jeep Wrangler",
+  "Kia Optima",
+  "Kia Stinger",
+  "Lexus IS",
+  "Lotus Evora",
+  "Mazda 3",
+  "Mazda 6",
+  "Mazda MX-5",
+  "Nissan Altima",
+  "Nissan Cube",
+  "Nissan GT-R",
+  "NVNA Opus", // Greenville fictional
+  "Peterbilt 579",
+  "Pontiac GTO",
+  "Porsche 911",
+  "Rivian R1T",
+  "Rivian R1S",
+  "Saab 9-3",
+  "Scion FR-S",
+  "Smart Fortwo",
+  "Subaru BRZ",
+  "Subaru Impreza",
+  "Subaru WRX",
+  "Toyota Camry",
+  "Toyota Corolla",
+  "Toyota Prius",
+  "Toyota Supra",
+  "Tesla Model S",
+  "Volkswagen Golf",
+  "Volkswagen Jetta",
+  "Volvo S60",
+  "Volvo XC90"
+];
+const themingVehicleUpdateInterval = 2000; // in milliseconds
+const themingVehicleSpan1 = document.getElementById('theming-vehicle-span-1');
+const themingVehicleSpan2 = document.getElementById('theming-vehicle-span-2');
+const distanceDisplay = document.getElementById('distance-display');
+const distanceChangeSpeed = 0.001; // miles per millisecond
+
+// Card state variables
 let cardWidth = 613; // Default width, will be automatically updated on card creation
-let cardRows = []; // [ { element: HTMLDivElement, cards: [ HTMLImageElement ], reversed: boolean } ]
+/**
+ * @type {Array<{ element: HTMLDivElement, cards: Array<HTMLImageElement>, reversed: boolean }>} cardRows
+ */
+let cardRows = [];
 let lastTimestamp = null; // To track time between frames
+
+// Theming state variables
+let themingVehicleIndex = 0;
+let themingShuffled = shuffleArray([...themingVehicles]);
+let themingSpanIndex = false; // To alternate between the two spans for animation
 
 // Fisher-Yates array shuffle algorithm
 function shuffleArray(array) {
@@ -116,15 +204,44 @@ function initializeCardPositions() {
   }
 }
 
+function updateThemingVehicle() {
+  themingVehicleIndex++;
+  if (themingVehicleIndex >= themingShuffled.length) {
+    themingShuffled = shuffleArray([...themingVehicles]);
+    themingVehicleIndex = 0;
+  }
+
+  themingSpanIndex = !themingSpanIndex; // Toggle between 0 and 1
+
+  const previousVehicleSpan = themingSpanIndex ? themingVehicleSpan2 : themingVehicleSpan1;
+  previousVehicleSpan.classList.remove('incoming');
+  previousVehicleSpan.classList.add('outgoing');
+  const currentVehicleSpan = themingSpanIndex ? themingVehicleSpan1 : themingVehicleSpan2;
+  currentVehicleSpan.textContent = themingShuffled[themingVehicleIndex];
+  currentVehicleSpan.classList.remove('outgoing');
+  currentVehicleSpan.classList.add('incoming');
+}
+
+function updateDistanceDisplay(timestamp) {
+  const distance = (timestamp || 0) * distanceChangeSpeed;
+  distanceDisplay.textContent = `${distance.toFixed(1)} mi`;
+}
+
 function animate(timestamp) {
   if (!lastTimestamp) lastTimestamp = timestamp;
   const deltaTime = Math.min(timestamp - lastTimestamp, 100); // Cap deltaTime to avoid large jumps
 
   lastTimestamp = timestamp;
   updateCardAnimations(deltaTime);
+  updateDistanceDisplay(timestamp);
   requestAnimationFrame(animate);
 }
 
 createAnimatedCards();
 initializeCardPositions();
+updateThemingVehicle();
 requestAnimationFrame(animate);
+
+setInterval(updateThemingVehicle, themingVehicleUpdateInterval);
+
+window.addEventListener('resize', initializeCardPositions);
