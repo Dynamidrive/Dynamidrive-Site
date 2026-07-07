@@ -120,7 +120,7 @@ function updateCardAnimations(deltaTime) {
       currentX += (speed * direction) * deltaTime;
 
       // Handle wrapping - when card exits one side, move it to the other side
-      if (direction === 1 && currentX > cardWidth) {
+      if (direction === 1 && currentX > containerWidth) {
         // Moving right, when card goes off right edge, wrap to left
         const leftMostX = Math.min(...row.cards.map(c => parseFloat(c.dataset.x || '0')));
         currentX = leftMostX - cardWidth - cardGap;
