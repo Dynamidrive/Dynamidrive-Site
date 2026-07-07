@@ -187,6 +187,7 @@ function createAnimatedCards() {
       const img = document.createElement('img');
       img.classList.add('animated-card');
       img.setAttribute("loading", "lazy");
+      img.setAttribute("alt", `Soundtrack ${cardIndices[currentIndex]}`);
       img.addEventListener("load", () => img.classList.add('loaded')); // Add loaded class on load
       img.src = `${cardImagePath}${cardIndices[currentIndex]}.png`;
 
