@@ -107,6 +107,7 @@
   0%,
   100% {
     top: 0;
+    opacity: 1;
   }
 
   100% {
@@ -126,6 +127,12 @@
     top: 0;
     opacity: 1;
   }
+}
+
+:root {
+  --section-header-font-size-small: 3rem;
+  --section-header-font-size-smaller: 2.4rem;
+  --section-text-font-size-small: 1.3rem;
 }
 
 main {
@@ -328,17 +335,15 @@ main {
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
+          animation: 1s ease-in-out forwards;
         }
 
         span.outgoing {
-          animation: themingVehicleSlideOut 1s ease-in-out forwards;
-          /* Hide extra lines */
-          /* max-height: calc(var(--header-text-font-size) + 0.5rem);
-          overflow: hidden; */
+          animation-name: themingVehicleSlideOut;
         }
 
         span.incoming {
-          animation: themingVehicleSlideIn 1s ease-in-out forwards;
+          animation-name: themingVehicleSlideIn;
         }
       }
 
@@ -469,17 +474,21 @@ main {
   main {
     section.split .text {
       h2 {
-        font-size: 3rem;
+        font-size: var(--section-header-font-size-small);
       }
 
       hr {
         max-width: 100%;
       }
+
+      .make-and-model {
+        height: calc(var(--section-header-font-size-small) + 0.5rem) !important;
+      }
     }
 
     section.download-section h2,
     section.faq-section h2 {
-      font-size: 2.4rem;
+      font-size: var(--section-header-font-size-smaller);
     }
 
     section.faq-section .faq-list {
@@ -493,7 +502,7 @@ main {
   main {
     section.welcome {
       .hero-title {
-        font-size: 2.4rem;
+        font-size: var(--section-header-font-size-smaller);
       }
     }
 
@@ -505,7 +514,7 @@ main {
         width: 100%;
 
         h2 {
-          font-size: 2rem;
+          font-size: var(--section-header-font-size-smaller);
         }
 
         hr {
@@ -513,7 +522,11 @@ main {
         }
 
         p {
-          font-size: 1.3rem;
+          font-size: var(--section-text-font-size-small);
+        }
+
+        .make-and-model {
+          height: calc(var(--section-header-font-size-smaller) + 0.5rem) !important;
         }
       }
 
