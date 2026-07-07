@@ -75,6 +75,34 @@
   }
 }
 
+@keyframes themingStripes {
+  0% {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+    filter: brightness(1);
+  }
+
+  12% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  40% {
+    filter: brightness(0.4);
+    transform: translate3d(0, 0, 0);
+  }
+
+  52% {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+}
+
 @keyframes themingVehicleSlideOut {
   0%,
   100% {
@@ -179,19 +207,24 @@ main {
       position: absolute;
       bottom: var(--spacing-base);
       text-decoration: none;
+
+      p,
+      svg {
+        animation: 3.5s infinite ease-in-out;
+      }
       
       p {
         font-size: 1.5rem;
         font-weight: 600;
         font-variation-settings: 'wght' 600, 'wdth' 125;
         margin: 0;
-        animation: learnMoreText 3.5s infinite ease-in-out;
+        animation-name: learnMoreText;
       }
 
       svg {
         height: 20px;
         margin-top: 0.5rem;
-        animation: learnMoreIcon 3.5s infinite ease-in-out;
+        animation-name: learnMoreIcon;
       }
     }
   }
@@ -309,21 +342,39 @@ main {
         }
       }
 
-      .theming-stripes-illustration .theming-stripes-container {
-        display: flex;
-        flex-direction: row;
-        gap: var(--spacing-medium);
-        height: 130%;
-        position: absolute;
-        top: 0;
-        right: 7rem;
-        transform: rotate(35deg);
-        z-index: -1;
+      .theming-stripes-illustration {
+        position: relative;
 
-        .theming-stripe {
-          width: 50px;
-          height: 100%;
-          background: var(--color-secondary);
+        .theming-stripes-container {
+          display: flex;
+          flex-direction: row;
+          gap: var(--spacing-medium);
+          height: 130%;
+          position: absolute;
+          top: -13rem;
+          right: -3rem;
+          transform: rotate(35deg);
+          z-index: -1;
+
+          .theming-stripes-group {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            gap: var(--spacing-medium);
+            --animation-length: 8s;
+            will-change: transform, filter, opacity;
+            animation: themingStripes var(--animation-length) linear infinite both;
+
+            &.b {
+              animation-delay: calc(var(--animation-length) / 2);
+            }
+
+            .theming-stripe {
+              width: 50px;
+              height: 1000px;
+              background: var(--color-secondary);
+            }
+          }
         }
       }
     }

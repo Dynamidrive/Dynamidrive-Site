@@ -84,6 +84,38 @@ const themingVehicles = [
 const themingVehicleUpdateInterval = 2000; // in milliseconds
 const themingVehicleSpan1 = document.getElementById('theming-vehicle-span-1');
 const themingVehicleSpan2 = document.getElementById('theming-vehicle-span-2');
+const themingStripes = {
+  a: document.querySelectorAll('.theming-stripes-group.a .theming-stripe'),
+  b: document.querySelectorAll('.theming-stripes-group.b .theming-stripe')
+};
+const themingStripeColors = [
+  // No dark colors (e.g., black, gray) to avoid low contrast
+  // Iconic BMW M colors
+  '#0033A0', // BMW M Blue
+  '#FF0000', // BMW M Red
+  '#FFFFFF', // BMW M White
+  // Iconic Audi RS colors
+  '#BB0A30', // Audi RS Red
+  // Iconic Porsche colors
+  '#FFB81C', // Porsche Yellow
+  // Iconic Ferrari colors
+  '#FF2800', // Ferrari Red
+  // Iconic McLaren colors
+  '#FF5C00', // McLaren Orange
+  // Iconic Mercedes-AMG colors
+  '#00AEEF', // Mercedes-AMG Blue
+  // Iconic Nissan GT-R colors
+  '#C8102E', // Nissan GT-R Red
+  // Other pastel colors for variety
+  '#FF69B4', // Hot Pink
+  '#8A2BE2', // Blue Violet
+  '#00CED1', // Dark Turquoise
+  '#2E8B57', // Sea Green
+  '#FF4500', // Orange Red
+  '#1E90FF', // Dodger Blue
+  '#00FF7F', // Spring Green
+];
+const themingStripesAnimationDuration = 4000; // in milliseconds
 const distanceDisplay = document.getElementById('distance-display');
 const distanceChangeSpeed = 0.001; // miles per millisecond
 
@@ -99,6 +131,9 @@ let lastTimestamp = null; // To track time between frames
 let themingVehicleIndex = 0;
 let themingShuffled = shuffleArray([...themingVehicles]);
 let themingSpanIndex = false; // To alternate between the two spans for animation
+let themingFirstUpdateDone = false; // To handle the first update differently
+let themingStripesLastUpdate = 0; // To track time between theming updates
+let themingStripesCurrentGroup = false; // To alternate between the two groups of stripes
 
 // Fisher-Yates array shuffle algorithm
 function shuffleArray(array) {
@@ -222,6 +257,38 @@ function updateThemingVehicle() {
   currentVehicleSpan.classList.add('incoming');
 }
 
+/**
+ * @returns {string[]} An array of 3 hex color code strings.
+ */
+function getRandomColorCombination() {
+  const shuffledColors = shuffleArray([...themingStripeColors]);
+  return shuffledColors.slice(0, 3);
+}
+
+function updateThemingStripeElements(elements) {
+  const colors = getRandomColorCombination();
+  elements.forEach((stripe, index) => {
+    stripe.style.backgroundColor = colors[index];
+  });
+}
+
+/*
+  Implements:
+  - Updates each stripe with a random color every 6 seconds.
+  - Alternates between two sets of stripes (a and b) to create a continuous animation effect.
+  - Stripes "B" start their animation 50% of the way through the "A" animation cycle, which is when the CSS animation moves them in.
+*/
+function updateThemingStripes(timestamp) {
+  const currentTime = timestamp || performance.now();
+  if (currentTime - themingStripesLastUpdate >= themingStripesAnimationDuration) {
+    themingStripesCurrentGroup = !themingStripesCurrentGroup; // Toggle between the two groups of stripes
+    const currentGroup = themingStripesCurrentGroup ? themingStripes.b : themingStripes.a;
+    updateThemingStripeElements(currentGroup);
+
+    themingStripesLastUpdate = currentTime;
+  }
+}
+
 function updateDistanceDisplay(timestamp) {
   const distance = (timestamp || 0) * distanceChangeSpeed;
   distanceDisplay.textContent = `${distance.toFixed(1)} mi`;
@@ -234,6 +301,7 @@ function animate(timestamp) {
   lastTimestamp = timestamp;
   updateCardAnimations(deltaTime);
   updateDistanceDisplay(timestamp);
+  updateThemingStripes(timestamp);
   requestAnimationFrame(animate);
 }
 
@@ -243,5 +311,12 @@ updateThemingVehicle();
 requestAnimationFrame(animate);
 
 setInterval(updateThemingVehicle, themingVehicleUpdateInterval);
+// setInterval(() => updateThemingStripes(themingStripes.a), 6000);
+// setTimeout(() => {
+//   setInterval(() => updateThemingStripes(themingStripes.b), 6000);
+// }, 6000 * 0.5); // Start the second set of stripes after a delay
+
+updateThemingStripeElements(themingStripes.a);
+updateThemingStripeElements(themingStripes.b);
 
 window.addEventListener('resize', initializeCardPositions);
