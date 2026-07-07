@@ -191,57 +191,56 @@ main {
     height: auto;
     max-height: none;
   }
-}
 
-footer {
-  position: relative;
-  bottom: 0;
-  width: calc(100vw - (2 * var(--spacing-base)));
-  text-align: center;
-  padding: var(--spacing-base);
-  color: var(--color-text-muted);
-  border-top: 2px solid linear-gradient(to right, var(--color-background), var(--color-secondary), var(--color-background));
-  margin-top: var(--spacing-base);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-
-  p,
-  li,
-  a {
-    font-family: var(--font-logo);
-    font-weight: 400;
-    font-stretch: expanded;
-    font-variation-settings: 'wght' 400, 'wdth' 125;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  footer {
+    position: relative;
+    top: calc(-1 * (var(--spacing-base) * 3));
+    width: calc(100vw - (2 * var(--spacing-base)));
+    text-align: center;
+    padding: var(--spacing-base);
+    color: var(--color-text-muted);
+    border-top: 2px solid linear-gradient(to right, var(--color-background), var(--color-secondary), var(--color-background));
     display: flex;
     flex-direction: row;
-    gap: var(--spacing-base);
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 
-    li {
-      a {
-        text-decoration: underline 1.5px transparent;
-        transition: 0.2s ease-out text-decoration-color;
+    p,
+    li,
+    a {
+      font-family: var(--font-logo);
+      font-weight: 400;
+      font-stretch: expanded;
+      font-variation-settings: 'wght' 400, 'wdth' 125;
+    }
 
-        &:hover {
-          text-decoration-color: var(--color-text-muted);
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      gap: var(--spacing-base);
+
+      li {
+        a {
+          text-decoration: underline 1.5px transparent;
+          transition: 0.2s ease-out text-decoration-color;
+
+          &:hover {
+            text-decoration-color: var(--color-text-muted);
+          }
         }
       }
     }
   }
-}
 
-footer.logo-font-children :is(p, li, a) {
-  font-weight: 400;
-  font-variation-settings: 'wght' 400, 'wdth' 125;
+  footer.logo-font-children :is(p, li, a) {
+    font-weight: 400;
+    font-variation-settings: 'wght' 400, 'wdth' 125;
+  }
 }
 
 @media (max-width: 550px) {
