@@ -294,10 +294,15 @@ main {
           height: 30%;
           background: var(--color-tertiary-transparent);
           z-index: -1;
-          animation: othersVolumeSlide 7s ease-in-out infinite;
+          
+          /* TODO: Have the soundtracks increase volume in order while drums stays at max */
+          &:not(.drums) {
+            animation: othersVolumeSlide 7s ease-in-out infinite;
+          }
 
           &.drums {
-            animation-name: drumsVolumeSlide;
+            /* animation-name: drumsVolumeSlide; */
+            height: 100%;
           }
         }
 

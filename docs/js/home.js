@@ -25,6 +25,7 @@ const themingVehicles = [
   "Chevrolet HHR",
   "Chevrolet SS",
   "Chevrolet Tahoe",
+  "Combi Satisfaction", // Greenville fictional
   "Cool Car", // not a car just funny
   "Dodge Charger",
   "Durant Manta", // Greenville fictional
@@ -292,7 +293,7 @@ function updateThemingStripes(timestamp) {
 
 function updateDistanceDisplay(timestamp) {
   const distance = (timestamp || 0) * distanceChangeSpeed;
-  distanceDisplay.textContent = `${distance.toFixed(1)} mi`;
+  distanceDisplay.textContent = `${distance.toFixed(0)} mi`;
 }
 
 function animate(timestamp) {
