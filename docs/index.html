@@ -29,12 +29,12 @@
 
 <body>
   <nav class="backdrop-blur">
-    <section>
-      <img src="img/logo/Icon_Glass_Dark.png" alt="Dynamidrive Logo" class="logo" width="40" height="40">
+    <section role="link" aria-label="Home" onclick="window.location.href='./'">
+      <img src="img/logo/Icon_Glass_Dark_64x64.png" alt="Dynamidrive Logo" class="logo" width="40" height="40">
       <h1 class="logo-font gradient nav-brand-text">Dynamidrive</h1>
     </section>
     <ul class="nav-links logo-font-children">
-      <li><a href="#" class="nav-link active" aria-current="page" tabindex="0">Home</a></li>
+      <li><a href="./" class="nav-link active" aria-current="page" tabindex="0">Home</a></li>
       <li><a href="#download-section" class="nav-link">Download</a></li>
     </ul>
   </nav>
@@ -67,15 +67,15 @@
             <span>Drums</span>
           </div>
           <div class="track-volume-container">
-            <div class="track-volume" id="bass-volume"></div>
+            <div class="track-volume bass" id="bass-volume"></div>
             <span>Bass</span>
           </div>
           <div class="track-volume-container">
-            <div class="track-volume" id="vocals-volume"></div>
+            <div class="track-volume vocals" id="vocals-volume"></div>
             <span>Vocals</span>
           </div>
           <div class="track-volume-container">
-            <div class="track-volume" id="Other-volume"></div>
+            <div class="track-volume other" id="Other-volume"></div>
             <span>Other</span>
           </div>
         </div>
@@ -117,7 +117,7 @@
         <hr>
         <p>Your music stays yours. Your soundtracks are stored locally, and the Audio Seperator processes your file right on
           your iPhone, and isn't sent to a server.<br><br>We don't collect, or sell, any information about you while you use the app.
-          Because that's how it should be.<br><a href="./pp">Learn more</a>.</p>
+          Because that's how it should be.<br><a href="./about">Learn more</a>.</p>
       </div>
       
       <aside class="privacy-illustration">
@@ -215,6 +215,7 @@
       <ul>
         <li><a href="https://discord.gg/eeyu9UUnwc">Discord</a></li>
         <li><a href="./pp">Privacy Policy</a></li>
+        <li><a href="./about">About</a></li>
       </ul>
     </footer>
   </main>

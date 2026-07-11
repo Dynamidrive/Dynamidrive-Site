@@ -129,6 +129,7 @@ nav {
     display: flex;
     align-items: center;
     gap: var(--spacing-base);
+    cursor: pointer;
   }
 
   .nav-brand-text {
@@ -193,8 +194,6 @@ main {
   }
 
   footer {
-    position: relative;
-    top: calc(-1 * (var(--spacing-base) * 3));
     width: calc(100vw - (2 * var(--spacing-base)));
     text-align: center;
     padding: var(--spacing-base);
