@@ -514,6 +514,8 @@ main {
     section.split {
       flex-direction: column;
       text-align: center;
+      flex-wrap: nowrap;
+      padding: var(--spacing-section-side);
 
       .text {
         width: 100%;
@@ -544,6 +546,16 @@ main {
           min-width: 0;
           max-width: 100%;
         }
+
+        .theming-stripes-illustration .theming-stripes-container {
+          top: -30rem;
+          right: -3rem;
+        }
+      }
+
+      &.privacy-section .privacy-illustration svg {
+        width: 180px;
+        height: auto;
       }
     }
   }
