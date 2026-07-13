@@ -494,7 +494,8 @@ main {
 
   footer {
     position: relative;
-    top: calc(-1 * (var(--spacing-base) * 3));
+    transform: translateY(-100%);
+    box-sizing: border-box;
   }
 }
 
@@ -586,6 +587,18 @@ main {
         width: 180px;
         height: auto;
       }
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  main {
+    .faq-section .faq-list .faq-item details summary {
+      font-size: 0.9rem !important;
+    }
+
+    footer {
+      font-size: 0.8rem;
     }
   }
 }
