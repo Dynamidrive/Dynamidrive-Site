@@ -5,9 +5,9 @@
   <title>About - Dynamidrive</title>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" sizes="64x64" href="img/logo/Icon_Glass_Dark_64x64.png">
-  <link rel="apple-touch-icon" sizes="256x256" href="img/logo/Glass_Dark.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="img/logo/Icon_Glass_Dark.png">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/extra.css">
+  <link rel="stylesheet" href="css/about.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -16,15 +16,7 @@
   <meta name="keywords" content="Dynamidrive, music player, dynamic music, driving music, adaptive music">
   <meta name="author" content="ButterDogCo">
   <link rel="preload" href="fonts/SF-Pro.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWH179TWSL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-RWH179TWSL');
-  </script>
+  <script defer src="https://stats.butterdogco.com/script.js" data-website-id="44502976-a7ec-40d5-a719-5ab257659d4b"></script>
 </head>
 
 <body>
@@ -36,30 +28,52 @@
     <ul class="nav-links logo-font-children">
       <li><a href="./" class="nav-link" tabindex="0">Home</a></li>
       <li><a href="./#download-section" class="nav-link">Download</a></li>
+      <li><a href="./about" class="nav-link active" aria-current="page">About</a></li>
     </ul>
   </nav>
 
   <main>
-    <section class="title">
-      <h2 class="logo-font hero-title">About Dynamidrive</h2>
+    <section class="welcome">
+      <h2 class="logo-font hero-title">What the heck is Dynamidrive?!</h2>
+      <a href="#speed-section" class="learn-more-link">
+        <p>Learn More</p>
+        <svg width="143" height="37" viewBox="0 0 143 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.87161 11.521L62.5303 34.5613C65.3564 35.6549 68.7465 37 71.5156 37C74.2533 37 77.7004 35.6549 80.5265 34.5613L139.129 11.521C141.524 10.5716 143 8.47197 143 6.27905C143 2.71559 140.37 0 136.758 0C134.946 0 132.487 1.03709 130.935 1.59659L67.2905 26.6603H75.7093L12.0393 1.59659C10.5123 1.03709 8.08512 0 6.21622 0C2.62952 0 0 2.71559 0 6.27905C0 8.47197 1.4758 10.5716 3.87161 11.521Z" fill="white"/>
+        </svg>
+      </a>
     </section>
-    <section class="content limit-width align-top unlimited-height logo-font-headers">
-      <h2 class="header">Made For Drivers</h2>
+
+    <section class="text made-for-drivers">
+      <h2 class="logo-font">Made for drivers</h2>
       <p>Almost everyone drives while listening to their favorite music. From road trips to casual city driving, we are all
-        connected by the music that we listen to while travelling.</p>
-      <br>
-      <p>We wanted to take this idea further. What if your music could dynamically adapt to your driving? What if music was
-        adaptive, like it was made for a car? This is why we created Dynamidrive, the music player that changes <u>your</u>
-        music, based on your driving. Inspired by video games, Dynamidrive seperates your music into dynamic tracks, and lets
-        you choose when instruments fade in, set loops that trigger at certain speeds, and even seperate audio into stems
-        directly on your iPhone. We've added a host of features that add to your experience, such as, Boost Mode, which
-        gives your music a boost when you accelerate, a fully customizable app background with racing stripes to extend your
-        car's feel onto the app, and a full screen speedometer experience that lets you choose from a set of gauge styles to
-        let you focus on the road.</p>
-      <br>
-      <p>For privacy, we don't want to see where you are, or how you drive. Your location data is not stored anywhere, and we
-        know that you have seen enough ads elsewhere. Dynamidrive has NO ads, regardless of whether you have the subscription
-        or not.</p>
+        connected by the music that we listen to while traveling.</p>
+      <p>But we wanted to take this idea further. What if your music could dynamically adapt to how you drive? What if the
+        music can be adaptive, like it was made for the car? So we created Dynamidrive, the music player that changes
+        <u>your</u> music based on your driving.</p>
+    </section>
+
+    <section class="text privacy">
+      <h2 class="logo-font">Private by design</h2>
+      <p>We don't want to see where you are or what your driving habits are. Your location data is not stored anywhere. Plus,
+        we know you've seen enough ads elsewhere, and that's why Dynamidrive has no ads, not even without a subscription. All
+        of the soundtracks you make are stored on your iPhone, so you can still play and create soundtracks while offline, and
+        do so privately.</p>
+    </section>
+
+    <section class="contact">
+      <h2 class="logo-font">Talk to us!</h2>
+      <ul class="contact-bubble-list">
+        <li class="contact-bubble">
+          <a href="https://discord.gg/eeyu9UUnwc" target="_blank" rel="noopener noreferrer">
+            <img src="./img/Discord.png" alt="Discord logo" width="258" height="258">
+            <p>Join our Discord</p>
+        </li>
+        <li class="contact-bubble">
+          <a href="mailto:support@dynamidrive.app" target="_blank" rel="noopener noreferrer">
+            <img src="./img/Email.png" alt="Email icon" width="258" height="258">
+            <p>Contact support</p>
+        </li>
+      </ul>
     </section>
 
     <footer class="logo-font-children dark-color">

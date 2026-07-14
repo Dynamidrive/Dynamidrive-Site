@@ -20,6 +20,36 @@
   }
 }
 
+@keyframes learnMoreText {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  40%,
+  50% {
+    transform: translateY(-25px);
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+  }
+}
+
+@keyframes learnMoreIcon {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40%,
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
 :root {
   --color-primary: #f3f3f3;
   --color-secondary: #c3c3c3;

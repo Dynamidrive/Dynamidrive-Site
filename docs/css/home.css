@@ -21,36 +21,6 @@
   }
 }
 
-@keyframes learnMoreText {
-  0%,
-  100% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-
-  40%,
-  50% {
-    transform: translateY(-25px);
-    opacity: 1;
-  }
-
-  70% {
-    opacity: 0;
-  }
-}
-
-@keyframes learnMoreIcon {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  40%,
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
 @keyframes bassVolumeSlide {
   0%,
   100% {
@@ -291,6 +261,7 @@ main {
       justify-items: center;
       gap: var(--spacing-base);
 
+      /* TODO: Scale down for smaller screens */
       .track-volume-container {
         position: relative;
         display: flex;
@@ -588,6 +559,13 @@ main {
         height: auto;
       }
     }
+  }
+}
+
+@media (max-height: 930px) {
+  main section.split .privacy-illustration svg {
+    width: auto !important;
+    height: 180px !important;
   }
 }
 

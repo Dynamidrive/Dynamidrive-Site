@@ -1,0 +1,57 @@
+@import url("./global.css");
+
+main {
+  scroll-snap-type: y mandatory;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    flex-shrink: 0;
+    width: 100vw;
+    height: calc(100vh - var(--nav-height));
+  }
+
+  section.welcome {
+    position: relative;
+
+    .hero-title {
+      font-size: 70px;
+      margin: 0;
+      width: 700px;
+      max-width: 94vw;
+      padding-bottom: 0.5rem;
+      text-shadow: 0 0 24px rgba(0, 0, 0, .8);
+      transition: 0.2s ease-out;
+    }
+
+    .learn-more-link {
+      position: absolute;
+      bottom: var(--spacing-base);
+      text-decoration: none;
+
+      p,
+      svg {
+        animation: 3.5s infinite ease-in-out;
+      }
+      
+      p {
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-variation-settings: 'wght' 600, 'wdth' 125;
+        margin: 0;
+        animation-name: learnMoreText;
+      }
+
+      svg {
+        height: 20px;
+        margin-top: 0.5rem;
+        animation-name: learnMoreIcon;
+      }
+    }
+  }
+}
