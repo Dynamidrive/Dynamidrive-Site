@@ -124,7 +124,7 @@ main {
       list-style: none;
 
       .contact-bubble {
-        max-width: 258px;
+        max-width: 200px;
 
         p {
           margin: var(--spacing-base) 0 0 0;
@@ -224,22 +224,17 @@ main {
       font-size: 1.6rem !important;
     }
 
-    .track-volumes-illustration {
-      right: 50%;
-      transform: translate(50%, -30%);
+    .track-volumes-illustration .track-volumes-container {
+      display: flex !important;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
 
-      .track-volumes-container {
-        display: flex !important;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        .track-volume-container {
-          height: auto !important;
-          width: calc(50% - var(--spacing-base)) !important;
-          border-radius: 4vh !important;
-          aspect-ratio: 1 / 2;
-        }
+      .track-volume-container {
+        height: auto !important;
+        width: calc(50% - var(--spacing-base)) !important;
+        border-radius: 4vh !important;
+        aspect-ratio: 1 / 2;
       }
     }
   }
