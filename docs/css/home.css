@@ -471,7 +471,7 @@ main {
   }
 }
 
-@media (max-height: 930px) {
+@media (max-height: 930px) and (max-width: 600px) {
   main section.split .privacy-illustration svg {
     width: auto !important;
     height: 180px !important;
