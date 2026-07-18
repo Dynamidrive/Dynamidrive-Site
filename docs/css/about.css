@@ -1,5 +1,6 @@
 @import url("./global.css");
 @import url("./elements/trackVolume.css");
+@import url("./elements/backgroundIcon.css");
 
 main {
   scroll-snap-type: y mandatory;
@@ -106,16 +107,6 @@ main {
       font-weight: 400;
       margin: 0;
     }
-
-    .icon {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translate(-50%, -50%);
-      height: 140%;
-      width: auto;
-      pointer-events: none;
-    }
   }
 
   section.contact {
@@ -205,10 +196,6 @@ main {
 
     p {
       font-size: 1.2rem !important;
-    }
-
-    .icon {
-      height: 90%;
     }
   }
 }

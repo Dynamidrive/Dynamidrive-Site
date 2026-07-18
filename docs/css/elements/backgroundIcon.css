@@ -1,0 +1,15 @@
+.background-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  height: 140%;
+  width: auto;
+  pointer-events: none;
+}
+
+@media (max-width: 750px) {
+  .icon {
+    height: 90%;
+  }
+}
