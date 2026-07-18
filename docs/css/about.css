@@ -143,6 +143,22 @@ main {
           width: 100%;
           height: auto;
           object-fit: contain;
+          transition: 0.2s ease-out filter;
+        }
+        
+        a {
+          &:hover,
+          &:focus {
+            img {
+              filter: brightness(1.2);
+            }
+          }
+
+          &:active {
+            img {
+              filter: brightness(0.8);
+            }
+          }
         }
       }
     }
