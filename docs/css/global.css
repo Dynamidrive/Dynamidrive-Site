@@ -264,6 +264,12 @@ main {
         }
       }
     }
+
+    &.custom-page-adjustments {
+      position: relative;
+      transform: translateY(-100%);
+      box-sizing: border-box;
+    }
   }
 
   footer.logo-font-children :is(p, li, a) {

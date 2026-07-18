@@ -375,12 +375,6 @@ main {
       font-variation-settings: 'wght' 300, 'wdth' 125;
     }
   }
-
-  footer {
-    position: relative;
-    transform: translateY(-100%);
-    box-sizing: border-box;
-  }
 }
 
 .logo-font.hero-title {
@@ -389,7 +383,7 @@ main {
   font-size: 70px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) or (max-height: 750px) {
   main {
     section.split .text {
       h2 {
@@ -402,6 +396,10 @@ main {
 
       .make-and-model {
         height: calc(var(--section-header-font-size-small) + 0.5rem) !important;
+      }
+
+      p {
+        font-size: var(--section-text-font-size-small);
       }
     }
 
