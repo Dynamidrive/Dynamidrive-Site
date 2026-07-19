@@ -8,6 +8,8 @@ const cardGap = 16; // Gap between cards in pixels
 const cardAnimationSpeedMultiplier = 1.5; // Multiplier to speed up the animation
 const cardAnimationRowFactor = 4; // Factor to slow down lower rows (higher = more consistent speed)
 const animatedCardsContainer = document.getElementById('animated-cards-container');
+const playButtonEasterEgg = document.getElementById('play-button-easter-egg');
+const easterEggAudioSrc = 'audio/louie\'s pizza vocals.mp3';
 
 // Section animation configuration
 const themingVehicles = [
@@ -296,6 +298,13 @@ function updateDistanceDisplay(timestamp) {
   distanceDisplay.textContent = `${distance.toFixed(0)} mi`;
 }
 
+function playEasterEggAudio() {
+  const audio = new Audio(easterEggAudioSrc);
+  audio.play().catch(error => {
+    console.error("Error playing easter egg audio:", error);
+  });
+}
+
 function animate(timestamp) {
   if (!lastTimestamp) lastTimestamp = timestamp;
   const deltaTime = Math.min(timestamp - lastTimestamp, 100); // Cap deltaTime to avoid large jumps
@@ -322,3 +331,4 @@ updateThemingStripeElements(themingStripes.a);
 updateThemingStripeElements(themingStripes.b);
 
 window.addEventListener('resize', initializeCardPositions);
+playButtonEasterEgg.addEventListener('click', playEasterEggAudio);

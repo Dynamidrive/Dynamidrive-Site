@@ -313,6 +313,27 @@ main {
         white-space: nowrap;
         z-index: 1;
       }
+
+      .play-button {
+        position: absolute;
+        top: 48%;
+        left: 667px;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        z-index: 1;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 0.2s ease-out background;
+
+        &:hover,
+        &:focus {
+          background: rgba(255, 255, 255, 0.1);
+          outline: none;
+        }
+      }
     }
   }
 
