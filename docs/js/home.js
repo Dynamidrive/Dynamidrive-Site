@@ -8,8 +8,11 @@ const cardGap = 16; // Gap between cards in pixels
 const cardAnimationSpeedMultiplier = 1.5; // Multiplier to speed up the animation
 const cardAnimationRowFactor = 4; // Factor to slow down lower rows (higher = more consistent speed)
 const animatedCardsContainer = document.getElementById('animated-cards-container');
+const distanceIllustrationImg = document.getElementById('distance-illustration-img');
 const playButtonEasterEgg = document.getElementById('play-button-easter-egg');
 const easterEggAudioSrc = 'audio/louie\'s pizza vocals.mp3';
+const easterEggImgSrc = 'img/DistanceIllustrationEasterEgg.png';
+const increasedDistanceChangeSpeed = 0.05; // miles per millisecond when easter egg is triggered
 
 // Section animation configuration
 const themingVehicles = [
@@ -120,7 +123,7 @@ const themingStripeColors = [
 ];
 const themingStripesAnimationDuration = 4000; // in milliseconds
 const distanceDisplay = document.getElementById('distance-display');
-const distanceChangeSpeed = 0.001; // miles per millisecond
+let distanceChangeSpeed = 0.001; // miles per millisecond
 
 // Card state variables
 let cardWidth = 613; // Default width, will be automatically updated on card creation
@@ -298,11 +301,17 @@ function updateDistanceDisplay(timestamp) {
   distanceDisplay.textContent = `${distance.toFixed(0)} mi`;
 }
 
-function playEasterEggAudio() {
+let easterEggHappened = false;
+function triggerEasterEgg() {
   const audio = new Audio(easterEggAudioSrc);
   audio.play().catch(error => {
     console.error("Error playing easter egg audio:", error);
   });
+
+  if (easterEggHappened) return;
+  distanceIllustrationImg.setAttribute('src', easterEggImgSrc);
+  distanceChangeSpeed = increasedDistanceChangeSpeed;
+  easterEggHappened = true;
 }
 
 function animate(timestamp) {
@@ -331,4 +340,4 @@ updateThemingStripeElements(themingStripes.a);
 updateThemingStripeElements(themingStripes.b);
 
 window.addEventListener('resize', initializeCardPositions);
-playButtonEasterEgg.addEventListener('click', playEasterEggAudio);
+playButtonEasterEgg.addEventListener('click', triggerEasterEgg);
