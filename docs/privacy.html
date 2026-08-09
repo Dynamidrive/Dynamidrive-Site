@@ -37,7 +37,7 @@
   <main>
     <section class="title">
       <h1 class="logo-font">Privacy Policy</h1>
-      <h3 class="logo-font">Effective date: June 22nd, 2026</h3>
+      <h3 class="logo-font">Effective date: August 9th, 2026</h3>
     </section>
     <section class="limit-width align-top unlimited-height logo-font-headers">
       <h2 id="introduction">Introduction</h2>
@@ -86,8 +86,9 @@
       <ul>
         <li>Most location processing is handled by Apple&#39;s native CoreLocation and MapKit frameworks</li>
         <li>Location data is NEVER sent to our servers</li>
-        <li>Location data is NOT shared with third parties except for TomTom speed limit lookups and Mapbox map rendering
-          when the Mono map style is enabled (see Third-Party Services section)
+        <li>Location data is NOT shared with third parties except for TomTom speed limit lookups, Mapbox map rendering
+          when the Mono map style is enabled, and optional ALPR camera lookups through the Overpass/OpenStreetMap
+          service (see Third-Party Services section)
         </li>
         <li>The Mono map style reduces the precision of coordinates used for display and throttles map updates to reduce
           bandwidth</li>
@@ -131,7 +132,31 @@
         <li>Audio separation happens locally on your device</li>
         <li>Your selected audio file is not uploaded to Dynamidrive servers for audio separation</li>
       </ul>
-      <h3 id="4-app-settings-and-preferences">4. App Settings and Preferences</h3>
+      <h3 id="4-alpr-awareness-features">4. ALPR Awareness Features</h3>
+      <p><strong>What ALPRs are:</strong> Automatic License Plate Readers (ALPRs) are cameras installed in public
+        areas that can read license plates and record when a vehicle is seen. ALPR systems may also record identifying
+        vehicle features and store that information on servers operated by the camera owner or a related service.</p>
+      <p><strong>What Dynamidrive does:</strong> Dynamidrive does not operate ALPR cameras, read license plates, capture
+        vehicle images, or collect a history of where your vehicle has been. We use publicly available,
+        community-maintained OpenStreetMap data to help you become aware of reported ALPR camera locations.</p>
+      <ul>
+        <li>When you enable <strong>Show Nearby ALPRs</strong>, the App sends your current latitude and longitude to
+          the public Overpass API to search for reported ALPR locations within approximately 10 kilometers (6.2 miles).</li>
+        <li>The returned camera coordinates are stored locally on your device so the App can display map pins and use
+          them during your session.</li>
+        <li>When you also enable <strong>Notify Me When Nearby</strong>, the App checks your current location against
+          the locally stored coordinates and can show an in-app notification when you are within approximately 1,000
+          feet of a reported camera.</li>
+        <li>Directional guidance in the notification uses your current heading and location on your device. It is not
+          uploaded to Dynamidrive and is not retained as a driving or location history.</li>
+        <li>Both ALPR features are optional, require an internet connection for camera lookups, and can be disabled in
+          Settings at any time.</li>
+      </ul>
+      <p><strong>Important limitations:</strong> ALPR camera locations come from public, crowdsourced data and may be
+        incomplete, outdated, or inaccurate. Camera-location data is not the same as ALPR records about people or
+        vehicles. <strong>We believe drivers deserve awareness, not surveillance—stay informed and stay safe!</strong>
+        You can learn more about publicly reported camera locations at <a href="https://deflock.org">Deflock.org</a>.</p>
+      <h3 id="5-app-settings-and-preferences">5. App Settings and Preferences</h3>
       <p><strong>What is stored in the App:</strong></p>
       <ul>
         <li>User interface preferences (colors, backgrounds, sorting options)</li>
@@ -140,6 +165,7 @@
         <li>In-app purchase status (subscription and one-time purchase status)</li>
         <li>Playlist names, playlist membership, selected playlist, and dismissed playlist suggestions</li>
         <li>Notification preferences for distance milestones and state-entry alerts</li>
+        <li>Reported ALPR camera coordinates downloaded for the optional ALPR awareness features</li>
         <li>Shortcut/deep-link state needed for app actions such as opening or controlling Dynamidrive</li>
         <li>Cached audio separation availability messages downloaded from Dynamidrive&#39;s website configuration file</li>
       </ul>
@@ -150,7 +176,7 @@
         <li>Settings are NOT synced across devices</li>
         <li>Settings are NOT uploaded to external servers</li>
       </ul>
-      <h3 id="5-in-app-purchases">5. In-App Purchases</h3>
+      <h3 id="6-in-app-purchases">6. In-App Purchases</h3>
       <p><strong>What the App Processes:</strong></p>
       <ul>
         <li>In-app purchases are processed entirely through Apple&#39;s StoreKit framework</li>
@@ -164,7 +190,7 @@
         <li>The App receives anonymized transaction information from Apple</li>
         <li>No credit card or personal payment information is accessible to us</li>
       </ul>
-      <h3 id="6-sharing-soundtracks-and-playlists">6. Sharing Soundtracks and Playlists</h3>
+      <h3 id="7-sharing-soundtracks-and-playlists">7. Sharing Soundtracks and Playlists</h3>
       <p><strong>Data Shared:</strong></p>
       <ul>
         <li>Files uploaded only for the soundtrack(s) that are shared</li>
@@ -181,7 +207,7 @@
         <li>Distance played for the shared soundtrack, or for any soundtrack</li>
         <li>Any personal information</li>
       </ul>
-      <h3 id="7-notifications-and-now-playing">7. Notifications and Now Playing</h3>
+      <h3 id="8-notifications-and-now-playing">8. Notifications and Now Playing</h3>
       <p><strong>Local Notifications:</strong></p>
       <ul>
         <li>Dynamidrive may send local notifications for audio separation completion and distance milestones</li>
@@ -207,6 +233,7 @@
         <li>Precise location history (the App only uses real-time location, not historical data)</li>
         <li>Information about your vehicle</li>
         <li>Information about your driving habits</li>
+        <li>Your license plate number or any other identifying information about your car</li>
         <li>Advertising profiles or cross-app tracking data</li>
       </ul>
       <h2 id="third-party-services">Third-Party Services</h2>
@@ -242,6 +269,20 @@
         <li>Mapbox operates under its own privacy policy. For more information, visit:
           <a href="https://www.mapbox.com/legal/privacy">Mapbox Privacy Policy</a></li>
       </ul>
+      <h3 id="overpass-openstreetmap-alpr-data">Overpass API and OpenStreetMap (ALPR Camera Data)</h3>
+      <p><strong>Purpose:</strong> To look up publicly mapped ALPR camera locations for the optional ALPR awareness
+        features.</p>
+      <p><strong>Data Shared:</strong> When the feature is enabled, the App sends your current latitude and longitude
+        in an Overpass query. The query requests nearby map objects tagged as surveillance cameras with an ALPR type.
+        The App does not send your name, license plate, vehicle information, or audio.</p>
+      <p><strong>Storage:</strong> The camera coordinates returned by the lookup are stored locally in the App. They
+        are not uploaded to Dynamidrive and are not included in soundtrack or playlist exports. Turning off
+        <strong>Show Nearby ALPRs</strong> immediately deletes the stored camera coordinates and stops new lookups and
+        notifications.</p>
+      <p><strong>Source and limitations:</strong> OpenStreetMap data is maintained by contributors and can be edited by
+        the community. It may not be complete or current. Overpass and OpenStreetMap are independent third-party
+        services with their own policies. See <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap&#39;s Privacy Policy</a>
+        and <a href="https://wiki.openstreetmap.org/wiki/Overpass_API">Overpass API information</a>.</p>
       <h3 id="butterdogco-umami-analytics-website-only-">ButterDogCo's Analytics (Website Only)</h3>
       <p><strong>Purpose:</strong> The Dynamidrive website, including this Privacy Policy page, uses ButterDogCo's instance of Umami Analytics to understand website traffic and page usage patterns. This applies to visits to dynamidrive.app in a web browser only, not to app usage inside Dynamidrive.</p>
       <p><strong>Data Collected:</strong></p>
@@ -343,6 +384,8 @@
             <li>Enable/disable the &quot;Distance Traveled Statistic&quot; in App Settings</li>
             <li>Reset all distance data at any time</li>
             <li>Choose between Gradient, default Map, and Mono map background behavior in Settings</li>
+            <li>Enable or disable <strong>Show Nearby ALPRs</strong> and <strong>Notify Me When Nearby</strong> in
+              Settings</li>
           </ul>
         </li>
       </ol>
@@ -421,6 +464,8 @@
       <h2 id="data-retention">Data Retention</h2>
       <ul>
         <li><strong>Location Data:</strong> Not retained; used in real-time only</li>
+        <li><strong>ALPR Camera Coordinates:</strong> Stored locally while <strong>Show Nearby ALPRs</strong> is
+          enabled. Turning off that toggle immediately deletes the stored camera coordinates.</li>
         <li><strong>Distance Statistics:</strong> Stored indefinitely until manually deleted by you</li>
         <li><strong>Audio Files (Local):</strong> Stored until you delete the soundtrack or uninstall the App</li>
         <li><strong>Audio Files (Audio Processing):</strong> Processed on your device and stored locally until you delete them</li>
@@ -437,8 +482,10 @@
       </ul>
       <p>The Dynamidrive website may use <a href="https://butterdogco.com">ButterDogCo</a>'s instance of Umami Analytics for
         website traffic measurement. ButterDogCo manages collected data under their <a href="https://butterdogco.com/pp">Privacy Policy</a>.
-        The App may also make limited service checks to Dynamidrive servers, such as checking whether audio separation is
-        available, the Terms of Service version, or Privacy Policy version.</p>
+        When optional ALPR awareness features are enabled, the App also makes location-based queries to the
+        Overpass/OpenStreetMap service as described above. The App may also make limited service checks to Dynamidrive
+        servers, such as checking whether audio separation is available, the Terms of Service version, or Privacy Policy
+        version.</p>
       <p>Dynamidrive does not sell, rent, or share your personal information with third parties for their marketing purposes.</p>
       <h2 id="california-privacy-rights-ccpa-">California Privacy Rights (CCPA)</h2>
       <p>If you are a California resident, you have the right to:</p>
@@ -476,15 +523,17 @@
         accessible language to ensure you understand exactly how your data is handled. If anything is unclear, please
         don&#39;t hesitate to contact us.</p>
       <h2 id="summary">Summary</h2>
-      <p><strong>What the App uses or stores:</strong> Real-time location (for speed, maps, and distance features), audio
-        files you choose to process on device, local app preferences, playlists, and notification state.</p>
+      <p><strong>What the App uses or stores:</strong> Real-time location (for speed, maps, distance, and optional ALPR
+        awareness features), publicly reported ALPR camera coordinates stored locally, audio files you choose to process
+        on device, local app preferences, playlists, and notification state.</p>
       <p><strong>What Dynamidrive DOESN&#39;T collect:</strong> Personal identifying information, third-party app analytics,
         advertising data, vehicle information, or permanent location history.</p>
       <p><strong>Your control:</strong> Full control over location permissions, distance tracking, and all stored data.
         You can delete this at any time.</p>
       <p><strong>Third parties:</strong> TomTom may receive coordinates for speed limits, Mapbox may receive map-rendering
-        requests when Mono map is enabled, and Apple handles purchases and system services. Audio separation runs on your
-        device and does not send your audio files to Dynamidrive servers.</p>
+        requests when Mono map is enabled, Overpass/OpenStreetMap may receive coordinates for optional ALPR camera
+        lookups, and Apple handles purchases and system services. Audio separation runs on your device and does not send
+        your audio files to Dynamidrive servers.</p>
       <p><strong>Data deletion:</strong> Audio files processed by the Audio Separator stay on your device until you delete
         them. All other local data stays on your device until you delete it.</p>
     </section>
